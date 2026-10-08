@@ -1,479 +1,900 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Saibal Dey - DevOps Specialist & Cloud Architect</title>
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Saibal Dey | AI-Accelerated Cloud/DevOps/SRE</title>
+  <style>
+    :root {
+      --bg-x: #061d2d;
+      --panel-bg: #0c2238;
+      --panel-2: #0c2945;
+      --panel-3: #102a3d;
+      --yellow: #f5d301;
+      --yellow-2: #f6ca00;
+      --sky: #85d9ff;
+      --teal: #5be0d5;
+      --purple: #8a7af5;
+      --orange: #ff9a32;
+      --pink: #ff5d94;
+      --green: #7ee787;
+      --red: #ff6f61;
+      --white: #f5f9ff;
+      --muted: #b7d1eb;
+      --line: rgba(255,255,255,0.12);
+      --shadow: rgba(3, 22, 32, 0.45);
+    }
 
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            line-height: 1.6;
-            color: #333;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            min-height: 100vh;
-        }
+    * { box-sizing: border-box; }
 
-        .container {
-            max-width: 1000px;
-            margin: 0 auto;
-            padding: 20px;
-        }
+    html, body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', Tahoma, sans-serif;
+      background: #d9d9d9;
+      color: var(--white);
+    }
 
-        .header {
-            background: white;
-            padding: 40px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-            text-align: center;
-        }
+    body {
+      padding: 18px 10px;
+    }
 
-        .header h1 {
-            color: #667eea;
-            font-size: 2.5em;
-            margin-bottom: 10px;
-        }
+    .page-wrap {
+      max-width: 1230px;
+      margin: 0 auto;
+      background: var(--bg-x);
+      border: 6px solid var(--yellow);
+      box-shadow: 0 8px 25px rgba(0,0,0,0.18);
+    }
 
-        .header .title {
-            color: #764ba2;
-            font-size: 1.3em;
-            margin-bottom: 20px;
-            font-weight: 500;
-        }
+    .top-banner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: var(--yellow);
+      color: #061f2d;
+      border-bottom: 6px solid #0b1f2d;
+      padding: 8px 12px 12px 12px;
+      min-height: 130px;
+    }
 
-        .header .summary {
-            font-size: 1.05em;
-            color: #555;
-            line-height: 1.8;
-            margin-bottom: 20px;
-        }
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      min-width: 320px;
+    }
 
-        .social-links {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-        }
+    .ai-logo {
+      width: 120px;
+      height: 92px;
+      background: linear-gradient(180deg, #0d2e42, #061d2d);
+      border: 4px solid #0b1f2d;
+      border-radius: 14px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: inset 0 0 0 2px rgba(255,255,255,0.05);
+    }
 
-        .social-links a {
-            display: inline-block;
-            padding: 10px 20px;
-            background: #667eea;
-            color: white;
-            text-decoration: none;
-            border-radius: 5px;
-            transition: background 0.3s;
-            font-size: 0.9em;
-        }
+    .ai-logo::before {
+      content: "AI";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+      font-weight: 900;
+      font-size: 2.4rem;
+      color: var(--white);
+      letter-spacing: 0.06em;
+    }
 
-        .social-links a:hover {
-            background: #764ba2;
-        }
+    .ai-logo::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 18px;
+      height: 8px;
+      background: linear-gradient(90deg, var(--yellow), #ffce00);
+      border-radius: 999px;
+      box-shadow: 0 0 18px rgba(255,206,0,0.42);
+    }
 
-        .mission-vision {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-            margin-bottom: 30px;
-        }
+    .brand-text {
+      font-weight: 900;
+      line-height: 0.9;
+      font-size: clamp(2rem, 3vw, 4rem);
+      letter-spacing: 0.02em;
+      color: #0b1f2d;
+    }
 
-        .mission-vision div {
-            background: white;
-            padding: 25px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-        }
+    .brand-sub {
+      display: block;
+      font-size: clamp(1.3rem, 2vw, 2.2rem);
+      font-weight: 800;
+      letter-spacing: 0.02em;
+      margin-top: 8px;
+    }
 
-        .mission-vision h3 {
-            color: #667eea;
-            margin-bottom: 10px;
-            font-size: 1.3em;
-        }
+    .certs {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      padding-right: 8px;
+    }
 
-        .mission-vision p {
-            color: #555;
-            line-height: 1.7;
-        }
+    .cert {
+      width: 72px;
+      height: 72px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, #e9eaee, #dfe5ef);
+      border: 3px solid #0b1f2d;
+      box-shadow: inset 0 0 0 4px rgba(255,255,255,0.35);
+      position: relative;
+      overflow: hidden;
+    }
 
-        section {
-            background: white;
-            padding: 30px;
-            border-radius: 10px;
-            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-            margin-bottom: 30px;
-        }
+    .cert:nth-child(1)::before { content: "aws"; font-weight: 900; font-size: 0.8rem; position: absolute; inset: 0; display: grid; place-items: center; color: #ff9900; }
+    .cert:nth-child(2)::before { content: "Azure"; font-weight: 900; font-size: 0.7rem; position: absolute; inset: 0; display: grid; place-items: center; color: #0078d4; }
+    .cert:nth-child(3)::before { content: "GCP"; font-weight: 900; font-size: 0.7rem; position: absolute; inset: 0; display: grid; place-items: center; color: #3b82f6; }
+    .cert:nth-child(4)::before { content: "K8s"; font-weight: 900; font-size: 0.7rem; position: absolute; inset: 0; display: grid; place-items: center; color: #3a7cff; }
+    .cert:nth-child(5)::before { content: "OCI"; font-weight: 900; font-size: 0.7rem; position: absolute; inset: 0; display: grid; place-items: center; color: #f7941d; }
 
-        section h2 {
-            color: #667eea;
-            font-size: 1.8em;
-            margin-bottom: 25px;
-            padding-bottom: 10px;
-            border-bottom: 3px solid #764ba2;
-        }
+    .profile-box {
+      display: grid;
+      grid-template-columns: 0.95fr 1.5fr;
+      background: var(--panel-bg);
+      min-height: 800px;
+    }
 
-        .roles-list {
-            list-style: none;
-        }
+    .left-rail {
+      background: linear-gradient(180deg, #071e2d 0%, #0b2137 100%);
+      border-right: 2px solid rgba(255,255,255,0.08);
+      padding: 18px 14px 20px 14px;
+    }
 
-        .roles-list li {
-            padding: 12px 0;
-            padding-left: 25px;
-            position: relative;
-            color: #555;
-            line-height: 1.6;
-        }
+    .profile-stats {
+      margin-top: 14px;
+      margin-bottom: 18px;
+      padding-bottom: 10px;
+      border-bottom: 2px solid rgba(255,255,255,0.08);
+    }
 
-        .roles-list li:before {
-            content: "✓";
-            position: absolute;
-            left: 0;
-            color: #667eea;
-            font-weight: bold;
-            font-size: 1.2em;
-        }
+    .years {
+      display: flex;
+      align-items: baseline;
+      gap: 8px;
+      margin-bottom: 12px;
+    }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
+    .years .big {
+      font-size: clamp(2.5rem, 4vw, 5rem);
+      font-weight: 900;
+      line-height: 1;
+      color: var(--yellow);
+    }
 
-        table th {
-            background: #667eea;
-            color: white;
-            padding: 12px;
-            text-align: left;
-            font-weight: 600;
-        }
+    .years .plus {
+      font-size: clamp(1.2rem, 2vw, 2.5rem);
+      font-weight: 900;
+      color: var(--yellow);
+    }
 
-        table td {
-            padding: 12px;
-            border-bottom: 1px solid #e0e0e0;
-        }
+    .years .unit {
+      font-size: 1.6rem;
+      font-weight: 800;
+      color: var(--white);
+      letter-spacing: 0.04em;
+    }
 
-        table tr:hover {
-            background: #f5f5f5;
-        }
+    .tech-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
 
-        .grid-2 {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+    .tech-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      padding: 3px 0;
+    }
 
-        .expertise-card {
-            padding: 15px;
-            background: #f9f9f9;
-            border-left: 4px solid #667eea;
-            border-radius: 5px;
-        }
+    .tech-list li::before {
+      content: "✓";
+      color: var(--yellow);
+      font-weight: 900;
+      font-size: 1.05rem;
+    }
 
-        .expertise-card h4 {
-            color: #667eea;
-            margin-bottom: 8px;
-            font-size: 1.1em;
-        }
+    .experience-box {
+      margin-top: 20px;
+      background: linear-gradient(180deg, rgba(255,208,0,0.12), rgba(255,208,0,0.04));
+      border: 1px solid rgba(255,208,0,0.26);
+      border-radius: 8px;
+      padding: 14px 12px;
+    }
 
-        .expertise-card p {
-            color: #666;
-            font-size: 0.95em;
-            line-height: 1.6;
-        }
+    .section-tag {
+      display: inline-block;
+      background: var(--yellow);
+      color: #0c233b;
+      font-weight: 900;
+      font-size: 1rem;
+      padding: 8px 12px;
+      border-radius: 6px;
+      margin-bottom: 12px;
+    }
 
-        .education-grid {
-            display: grid;
-            gap: 15px;
-        }
+    .circle-roles {
+      position: relative;
+      height: 240px;
+      margin: 8px 0 0;
+      overflow: hidden;
+    }
 
-        .education-item {
-            padding: 15px;
-            background: #f9f9f9;
-            border-left: 4px solid #764ba2;
-            border-radius: 5px;
-        }
+    .timeline {
+      position: absolute;
+      left: 40px;
+      top: 12px;
+      width: 3px;
+      height: 210px;
+      background: rgba(255,255,255,0.18);
+    }
 
-        .education-item h4 {
-            color: #764ba2;
-            margin-bottom: 5px;
-        }
+    .timeline::before {
+      content: "";
+      position: absolute;
+      left: -5px;
+      top: 0;
+      width: 13px;
+      height: 13px;
+      border-radius: 50%;
+      background: var(--yellow);
+    }
 
-        .education-item .details {
-            color: #666;
-            font-size: 0.9em;
-        }
+    .role {
+      position: absolute;
+      left: 64px;
+      width: 180px;
+      color: var(--white);
+      font-weight: 800;
+      font-size: 0.93rem;
+      line-height: 1.1;
+    }
 
-        footer {
-            text-align: center;
-            color: white;
-            padding: 20px;
-            margin-top: 40px;
-        }
+    .role strong { display: block; color: var(--white); }
+    .role small { color: var(--muted); }
 
-        footer p {
-            font-size: 0.95em;
-        }
+    .role.r1 { top: 18px; }
+    .role.r2 { top: 62px; }
+    .role.r3 { top: 106px; }
+    .role.r4 { top: 148px; }
+    .role.r5 { top: 190px; }
 
-        @media (max-width: 768px) {
-            .mission-vision {
-                grid-template-columns: 1fr;
-            }
+    .social-box {
+      margin-top: 18px;
+      padding-top: 12px;
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
 
-            .grid-2 {
-                grid-template-columns: 1fr;
-            }
+    .social-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 12px;
+    }
 
-            .header h1 {
-                font-size: 2em;
-            }
+    .icon-badge {
+      width: 36px;
+      height: 36px;
+      border-radius: 50%;
+      background: var(--yellow);
+      color: #0b1f2d;
+      display: grid;
+      place-items: center;
+      font-weight: 900;
+      font-size: 1rem;
+    }
 
-            .header .title {
-                font-size: 1.1em;
-            }
+    .right-panel {
+      background: linear-gradient(180deg, #081f2f 0%, #0d2439 100%);
+      padding: 18px 18px 20px 18px;
+    }
 
-            table {
-                font-size: 0.9em;
-            }
+    .top-row {
+      display: grid;
+      grid-template-columns: 1.25fr 1fr;
+      gap: 16px;
+      min-height: 170px;
+    }
 
-            table th, table td {
-                padding: 8px;
-            }
-        }
-    </style>
+    .profile-header {
+      background: linear-gradient(180deg, rgba(246,202,0,0.12), rgba(246,202,0,0.00));
+      border: 1px solid rgba(246,202,0,0.2);
+      border-radius: 12px;
+      padding: 14px 16px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+    }
+
+    .header-text {
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .header-text h1 {
+      margin: 0;
+      font-size: clamp(2rem, 3.2vw, 4rem);
+      font-weight: 900;
+      letter-spacing: 0.02em;
+      line-height: 0.96;
+      color: var(--white);
+    }
+
+    .header-text .sub {
+      font-size: 1.2rem;
+      font-weight: 700;
+      color: var(--yellow);
+      letter-spacing: 0.03em;
+    }
+
+    .profile-photo {
+      width: 132px;
+      height: 132px;
+      border-radius: 14px;
+      border: 4px solid rgba(255,255,255,0.12);
+      background: linear-gradient(135deg, #d5d5d5 0%, #8f9aa7 40%, #5a6d7a 100%);
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 14px 32px rgba(0,0,0,0.22);
+    }
+
+    .profile-photo::before {
+      content: "";
+      position: absolute;
+      inset: 20px 28px 20px 28px;
+      border-radius: 50% 50% 42% 42%;
+      background: linear-gradient(180deg, #f5d2b7 0%, #f3c7a6 44%, #d69a73 100%);
+      top: 18px;
+      height: 56px;
+      box-shadow: 0 50px 0 18px #d18c62;
+    }
+
+    .profile-photo::after {
+      content: "";
+      position: absolute;
+      left: 22px;
+      right: 22px;
+      bottom: 0;
+      height: 54px;
+      background: linear-gradient(180deg, rgba(0,0,0,0.05), rgba(0,0,0,0.25));
+      border-radius: 14px 14px 0 0;
+    }
+
+    .mini-panel {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px 14px 12px;
+    }
+
+    .mini-panel h3 {
+      margin: 0 0 12px;
+      font-size: 1.3rem;
+      color: var(--yellow);
+    }
+
+    .metric-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 8px;
+      margin: 8px 0;
+      color: var(--muted);
+      font-size: 0.9rem;
+    }
+
+    .bar {
+      flex: 1;
+      height: 8px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.08);
+      overflow: hidden;
+      position: relative;
+      margin-left: 10px;
+    }
+
+    .bar > span {
+      display: block;
+      height: 100%;
+      width: var(--p, 50%);
+      border-radius: inherit;
+      background: linear-gradient(90deg, var(--sky), var(--yellow));
+    }
+
+    .main-grid {
+      display: grid;
+      grid-template-columns: 1.05fr 1.2fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .card {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px 16px 16px;
+      min-height: 246px;
+    }
+
+    .card h3 {
+      margin: 0 0 12px;
+      color: var(--yellow);
+      font-size: 1.55rem;
+    }
+
+    .role-vertical {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .role-step {
+      position: relative;
+      padding-left: 24px;
+      color: var(--white);
+      font-weight: 700;
+      line-height: 1.3;
+    }
+
+    .role-step::before {
+      content: "";
+      position: absolute;
+      left: 0;
+      top: 9px;
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--yellow);
+      box-shadow: 0 0 0 3px rgba(245,211,1,0.18);
+    }
+
+    .contribution {
+      color: var(--muted);
+      line-height: 1.6;
+      font-size: 0.98rem;
+    }
+
+    .contribution strong {
+      color: var(--white);
+      font-weight: 800;
+    }
+
+    .contribution b {
+      color: var(--yellow);
+    }
+
+    .chart-panel {
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 16px;
+      position: relative;
+      min-height: 246px;
+    }
+
+    .chart-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .chart-head h3 {
+      margin: 0;
+      color: var(--yellow);
+      font-size: 1.5rem;
+    }
+
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px 12px;
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .legend span {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 2px;
+      display: inline-block;
+    }
+
+    .stack-chart {
+      margin-top: 18px;
+      position: relative;
+      height: 150px;
+      border-left: 1px solid rgba(255,255,255,0.18);
+      border-bottom: 1px solid rgba(255,255,255,0.18);
+    }
+
+    .stack-chart .line {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 2px;
+      background: rgba(255,255,255,0.08);
+      top: 50%;
+    }
+
+    .stack-chart .line.l2 { top: 25%; }
+    .stack-chart .line.l3 { top: 75%; }
+
+    .area {
+      position: absolute;
+      inset: auto 0 0 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .area svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .bottom-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 1.3fr;
+      gap: 18px;
+      margin-top: 18px;
+    }
+
+    .donut-wrap {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 210px;
+      position: relative;
+      margin-top: 8px;
+    }
+
+    .donut {
+      width: 180px;
+      height: 180px;
+      border-radius: 50%;
+      position: relative;
+      background: conic-gradient(
+        var(--yellow) 0deg 95deg,
+        var(--sky) 95deg 170deg,
+        var(--purple) 170deg 250deg,
+        var(--green) 250deg 320deg,
+        var(--pink) 320deg 360deg
+      );
+      box-shadow: inset 0 0 0 10px rgba(255,255,255,0.05);
+    }
+
+    .donut::before {
+      content: "";
+      position: absolute;
+      inset: 34px;
+      border-radius: 50%;
+      background: #112a3c;
+      border: 3px solid rgba(255,255,255,0.08);
+    }
+
+    .donut::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      border-radius: 50%;
+      background: transparent;
+      box-shadow: inset 0 0 0 18px rgba(7, 31, 45, 0.9);
+    }
+
+    .skill-list {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: grid;
+      gap: 8px;
+      color: var(--muted);
+      font-size: 0.95rem;
+      line-height: 1.45;
+    }
+
+    .skill-list li {
+      position: relative;
+      padding-left: 18px;
+    }
+
+    .skill-list li::before {
+      content: "›";
+      position: absolute;
+      left: 0;
+      color: var(--yellow);
+      font-size: 1.2rem;
+      font-weight: 900;
+      top: -3px;
+    }
+
+    .personal {
+      margin-top: 18px;
+      background: rgba(255,255,255,0.02);
+      border: 1px solid rgba(255,255,255,0.08);
+      border-radius: 12px;
+      padding: 14px 16px 18px;
+    }
+
+    .personal h3 {
+      color: var(--yellow);
+      margin: 0 0 12px;
+      font-size: 1.5rem;
+    }
+
+    .personal-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 12px;
+    }
+
+    .quote {
+      color: var(--muted);
+      font-size: 0.96rem;
+      line-height: 1.7;
+      margin: 0;
+    }
+
+    .refs {
+      display: grid;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .ref {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      background: rgba(255,255,255,0.015);
+      border: 1px solid rgba(255,255,255,0.06);
+      border-radius: 10px;
+      padding: 8px 10px;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+
+    .ref .avatar {
+      width: 28px;
+      height: 28px;
+      border-radius: 50%;
+      background: linear-gradient(120deg, #d9d9d9, #7a8796);
+      border: 2px solid rgba(255,255,255,0.18);
+    }
+
+    .social-row {
+      display: flex;
+      gap: 10px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .social-row .icon-badge {
+      width: 40px;
+      height: 40px;
+      border-radius: 10px;
+      font-size: 1.2rem;
+    }
+
+    @media (max-width: 1000px) {
+      .profile-box,
+      .main-grid,
+      .bottom-grid,
+      .top-row,
+      .personal-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .top-banner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .certs {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div class="container">
-        <div class="header">
-            <h1>Saibal Dey</h1>
-            <div class="title">DevOps Specialist | Cloud Architect | AI-Driven Infrastructure Expert</div>
-            <p class="summary">
-                21+ years of professional experience in AI-Driven Cloud, DevOps, and SRE roles, including working as a Consultant, Architect, TechLead, and Software Developer.
-            </p>
-            <div class="social-links">
-                <a href="https://github.com/saibaldey" target="_blank">GitHub Profile</a>
-                <a href="https://github.com/infotechmegh" target="_blank">Megh GitHub</a>
-                <a href="https://cloudguy20.medium.com/" target="_blank">Medium Blog</a>
-                <a href="https://meghinfotech.com/" target="_blank">Company Website</a>
-            </div>
+  <div class="page-wrap">
+    <header class="top-banner">
+      <div class="brand">
+        <div class="ai-logo" aria-label="AI accelerated"></div>
+        <div class="brand-text">
+          Saibal Dey
+          <span class="brand-sub">Cloud/DevOps/SRE</span>
+        </div>
+      </div>
+
+      <div class="certs" aria-label="certifications">
+        <div class="cert" title="AWS Certified"></div>
+        <div class="cert" title="Microsoft Azure Certified"></div>
+        <div class="cert" title="Google Cloud Certified"></div>
+        <div class="cert" title="Kubernetes Certified"></div>
+        <div class="cert" title="Oracle Cloud Certified"></div>
+      </div>
+    </header>
+
+    <div class="profile-box">
+      <aside class="left-rail">
+        <div class="profile-stats">
+          <div class="years">
+            <span class="big">21</span>
+            <span class="plus">+</span>
+            <span class="unit">Yrs</span>
+          </div>
+
+          <ul class="tech-list">
+            <li>HP</li>
+            <li>GP (GraminPhone)</li>
+            <li>Transcom</li>
+            <li>Stuff.co.nz</li>
+            <li>DataRobot</li>
+            <li>Seamless.se</li>
+            <li>TCS</li>
+            <li>Alcatel-lucent</li>
+            <li>Nortel-networks</li>
+            <li>Sasken</li>
+          </ul>
         </div>
 
-        <div class="mission-vision">
-            <div>
-                <h3>🎯 Mission</h3>
-                <p>To enable organizations to embrace the power of cloud, automation, and AI for sustainable growth and competitive advantage.</p>
-            </div>
-            <div>
-                <h3>🌟 Vision</h3>
-                <p>To be a leading technology enabler driving digital transformation with intelligence and automation.</p>
-            </div>
+        <div class="experience-box">
+          <div class="section-tag">Experience</div>
+          <div class="circle-roles" aria-label="career roles">
+            <div class="timeline"></div>
+            <div class="role r1"><strong>Consultant</strong><small>2025</small></div>
+            <div class="role r2"><strong>SRE</strong><small>2020</small></div>
+            <div class="role r3"><strong>DevOps</strong><small>2016</small></div>
+            <div class="role r4"><strong>Cloud Engineer</strong><small>2013</small></div>
+            <div class="role r5"><strong>TechLead</strong><small>2005</small></div>
+          </div>
         </div>
 
-        <section>
-            <h2>Roles & Responsibilities</h2>
-            <ul class="roles-list">
-                <li><strong>GitHub Copilot:</strong> AI Accelerated infrastructure automation and coding.</li>
-                <li><strong>CoPilot integrated smart RCA:</strong> AI-assisted RCA recommendations leveraging MS Copilot, Gemini, and AWS CloudWatch Investigation.</li>
-                <li><strong>Operational efficiency boosting:</strong> Automated multiple routine tasks using MS Teams and Power Automate.</li>
-                <li><strong>Reusable IaC Modules:</strong> Developed Terraform and Terragrunt modules for scalable infrastructure provisioning on cloud platforms.</li>
-                <li><strong>Smart Monitoring:</strong> Built intelligent monitoring systems for proactive issue detection and resolution.</li>
-                <li><strong>Knowledge Sharing:</strong> Created documentation and Knowledge Transfer (KT) videos to support onboarding and foster learning.</li>
-                <li><strong>PoCs & Innovation:</strong> Delivered Proof of Concepts (PoCs) using emerging tools to enhance DevOps/SRE practices.</li>
+        <div class="social-box">
+          <div class="section-tag">Remote Work</div>
+          <div style="font-weight:900; font-size:1.1rem; color:var(--white);">Since 2021</div>
+          <div class="social-links" aria-label="social media">
+            <div class="icon-badge">G</div>
+            <div class="icon-badge">in</div>
+            <div class="icon-badge">X</div>
+          </div>
+        </div>
+      </aside>
+
+      <main class="right-panel">
+        <div class="top-row">
+          <div class="profile-header">
+            <div class="header-text">
+              <h1>Saibal Dey</h1>
+              <div class="sub">AI-Accelerated Cloud / DevOps / SRE</div>
+            </div>
+            <div class="profile-photo" aria-label="profile portrait"></div>
+          </div>
+
+          <div class="mini-panel">
+            <h3>Proficiency Levels</h3>
+            <div class="metric-row"><span>CI/CD</span><div class="bar" style="--p: 92%;"><span></span></div></div>
+            <div class="metric-row"><span>APM</span><div class="bar" style="--p: 90%;"><span></span></div></div>
+            <div class="metric-row"><span>Kubernetes</span><div class="bar" style="--p: 96%;"><span></span></div></div>
+            <div class="metric-row"><span>Cloud</span><div class="bar" style="--p: 98%;"><span></span></div></div>
+            <div class="metric-row"><span>IaC</span><div class="bar" style="--p: 96%;"><span></span></div></div>
+            <div class="metric-row"><span>SRE</span><div class="bar" style="--p: 92%;"><span></span></div></div>
+          </div>
+        </div>
+
+        <div class="main-grid">
+          <div class="card">
+            <h3>Roles &amp; Responsibilities</h3>
+            <div class="role-vertical">
+              <div class="role-step">GitHub Copilot: AI accelerated infrastructure automation and coding.</div>
+              <div class="role-step">CoPilot smart RCA: AI-assisted RCA recommendations with GitHub, Copilot, Gemini and AWS CloudWatch Investigation.</div>
+              <div class="role-step">Operational efficiency boosting using Microsoft Teams and Power Automate.</div>
+              <div class="role-step">Reusable IaC modules for Terraform and Terragrunt provisioning across cloud environments.</div>
+            </div>
+          </div>
+
+          <div class="chart-panel">
+            <div class="chart-head">
+              <h3>Core Skills</h3>
+              <div class="legend">
+                <span><i class="dot" style="background: var(--yellow);"></i> Cloud</span>
+                <span><i class="dot" style="background: var(--sky);"></i> IaC</span>
+                <span><i class="dot" style="background: var(--purple);"></i> DevOps</span>
+                <span><i class="dot" style="background: var(--green);"></i> SRE</span>
+              </div>
+            </div>
+            <div class="stack-chart">
+              <div class="line l1"></div>
+              <div class="line l2"></div>
+              <div class="line l3"></div>
+              <div class="area">
+                <svg viewBox="0 0 500 150" preserveAspectRatio="none" aria-label="performance line graph">
+                  <path d="M0,110 C50,100 100,95 150,90 S230,45 265,52 S330,68 400,60 S465,38 500,28 L500,150 L0,150 Z" fill="rgba(133,217,255,0.10)" />
+                  <path d="M0,118 C60,108 120,80 160,70 S220,58 270,52 S340,48 400,40 S470,35 500,30" fill="none" stroke="#85d9ff" stroke-width="3" />
+                  <path d="M0,110 C55,92 110,70 170,63 S250,55 310,58 S415,72 500,65" fill="none" stroke="#f5d301" stroke-width="3" />
+                  <path d="M0,126 C40,118 80,104 140,90 S220,74 290,71 S375,68 500,62" fill="none" stroke="#8a7af5" stroke-width="3" />
+                  <path d="M0,121 C48,111 105,106 155,101 S230,95 310,86 S420,80 500,76" fill="none" stroke="#7ee787" stroke-width="3" />
+                </svg>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="bottom-grid">
+          <div class="card">
+            <h3>Tools &amp; Tech Exposures</h3>
+            <div class="donut-wrap">
+              <div class="donut" aria-label="tools donut chart"></div>
+            </div>
+          </div>
+
+          <div class="card">
+            <h3>Key Skills</h3>
+            <ul class="skill-list">
+              <li>GitHub Copilot: accelerated infrastructure automation and coding.</li>
+              <li>CoPilot integrated smart RCA: AI-assisted recommendations with MS Copilot, Gemini and AWS CloudWatch Investigation.</li>
+              <li>Operational efficiency boosting: automated routine tasks with MS Teams and Power Automate.</li>
+              <li>Reusable IaC modules: developed Terraform/Terragrunt modules for scalable cloud provisioning.</li>
+              <li>Smart monitoring: built proactive monitoring systems for faster issue detection and resolution.</li>
+              <li>Knowledge sharing: created KT content and documentation to support onboarding and learning.</li>
             </ul>
-        </section>
+          </div>
+        </div>
 
-        <section>
-            <h2>Reusability Contributions</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Area</th>
-                        <th>Details</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td><strong>Github Agentic AI</strong></td>
-                        <td>Integrated ADO, Jira, Github, Jenkins, DataDog, Confluence, Cloud Platform to automate the entire SDLC</td>
-                    </tr>
-                    <tr>
-                        <td><strong>MS Power Automate Workflow</strong></td>
-                        <td>Automated the Jira workflows using MS Teams & Power Automate</td>
-                    </tr>
-                    <tr>
-                        <td><strong>AI Accelerated Co-Pilot</strong></td>
-                        <td>Integrated Jira, Github & VS Code for automated code generation</td>
-                    </tr>
-                    <tr>
-                        <td><strong>Terraform Module</strong></td>
-                        <td>Created Terraform modules for Infrastructure as Code (IaC) provisioning in AWS</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>Core Expertise & Service Areas</h2>
-            <div class="grid-2">
-                <div class="expertise-card">
-                    <h4>☁️ Public Cloud</h4>
-                    <p>AWS, GCP, Azure, Oracle – Strategy, Security, Optimization</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🔐 Private Cloud</h4>
-                    <p>OpenStack, OpenShift – Hybrid, Secure K8s</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>📦 Migration & Modernization</h4>
-                    <p>Docker, Kubernetes, OpenShift – Lift & Shift, Refactor</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🚀 Cloud-Native</h4>
-                    <p>K8s, Docker, Istio – Scalable, Resilient Apps</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🏗️ Infrastructure as Code</h4>
-                    <p>Terragrunt, Terraform, Ansible, CloudFormation, Chef</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>⚙️ DevOps & SRE</h4>
-                    <p>CI/CD, Blue-Green, SLIs/SLOs</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🤖 Automation</h4>
-                    <p>Serverless, Workflow Integration, SDLC</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>📊 Observability</h4>
-                    <p>Splunk, ELK, Prometheus, Instana, DataDog</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🧠 AI & Smart Ops</h4>
-                    <p>Copilot, Predictive Scaling, Smart Alerts, OCI AI</p>
-                </div>
+        <div class="personal">
+          <h3>Personal</h3>
+          <div class="personal-grid">
+            <div>
+              <p class="quote">
+                Believe in simple living. When I have some free time, I enjoy gardening, cooking, trekking and reading wildlife and sustainability news. If I have a hero, it would still be Jon Jandai.
+              </p>
             </div>
-        </section>
-
-        <section>
-            <h2>Employment History</h2>
-            <table>
-                <thead>
-                    <tr>
-                        <th>Organization</th>
-                        <th>Role</th>
-                        <th>Duration</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Megh Infotech Pvt Ltd</td>
-                        <td>DevOps Specialist</td>
-                        <td>April 2025 - Present</td>
-                    </tr>
-                    <tr>
-                        <td>Megh Consulting</td>
-                        <td>DevOps Specialist</td>
-                        <td>April 2024 - March 2025</td>
-                    </tr>
-                    <tr>
-                        <td>Srijan Technologies</td>
-                        <td>DevOps Specialist</td>
-                        <td>January 2023 - April 2024</td>
-                    </tr>
-                    <tr>
-                        <td>TwoPi-Radian Infotech</td>
-                        <td>DevOps Lead</td>
-                        <td>August 2018 - December 2022</td>
-                    </tr>
-                    <tr>
-                        <td>Seamless Distribution System AB</td>
-                        <td>DevOps Lead</td>
-                        <td>July 2016 - August 2018</td>
-                    </tr>
-                    <tr>
-                        <td>TATA Consultancy Services</td>
-                        <td>DevOps Lead</td>
-                        <td>March 2011 - July 2016</td>
-                    </tr>
-                    <tr>
-                        <td>Aricent Technologies</td>
-                        <td>Sr. Engineer Software</td>
-                        <td>July 2010 - February 2011</td>
-                    </tr>
-                    <tr>
-                        <td>Sasken Communication Technologies Ltd.</td>
-                        <td>Sr. Engineer Software</td>
-                        <td>July 2005 - July 2010</td>
-                    </tr>
-                </tbody>
-            </table>
-        </section>
-
-        <section>
-            <h2>Educational Qualifications</h2>
-            <div class="education-grid">
-                <div class="education-item">
-                    <h4>Post Graduate Certification in Business Management</h4>
-                    <div class="details">
-                        <strong>Major:</strong> Marketing | <strong>Institute:</strong> IIT Bombay | <strong>Year:</strong> 2011-12
-                    </div>
-                </div>
-                <div class="education-item">
-                    <h4>BTech Information Technology</h4>
-                    <div class="details">
-                        <strong>Institute:</strong> Institute of Engineering & Management | <strong>Year:</strong> 2001-2005
-                    </div>
-                </div>
-                <div class="education-item">
-                    <h4>10+2 Science</h4>
-                    <div class="details">
-                        <strong>Board:</strong> WBCHSE | <strong>Year:</strong> 1999-2001
-                    </div>
-                </div>
+            <div>
+              <div class="refs">
+                <div class="ref"><span class="avatar"></span> Rajesh Ratakondh</div>
+                <div class="ref"><span class="avatar"></span> Homan Rajat Datta</div>
+                <div class="ref"><span class="avatar"></span> Gandhi Mukherjee</div>
+              </div>
             </div>
-        </section>
+          </div>
 
-        <section>
-            <h2>Open Source Contributions</h2>
-            <ul class="roles-list">
-                <li><a href="https://github.com/saibaldey" target="_blank">GitHub Profile - saibaldey</a></li>
-                <li><a href="https://github.com/infotechmegh" target="_blank">GitHub Organization - infotechmegh</a></li>
-                <li><a href="https://github.com/kubernetes/kubernetes/issues/73906#issuecomment-565964455" target="_blank">Kubernetes Contribution</a></li>
-                <li><a href="https://ask.openstack.org/en/users/25551/saibal-dey/" target="_blank">OpenStack Community</a></li>
-                <li><a href="https://cloudguy20.medium.com/" target="_blank">Medium - Technology Articles</a></li>
-            </ul>
-        </section>
-
-        <section>
-            <h2>Personal</h2>
-            <div class="grid-2">
-                <div class="expertise-card">
-                    <h4>💼 Founder</h4>
-                    <p><a href="https://meghinfotech.com/" target="_blank" style="color: #667eea;">Megh Infotech</a></p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🧘 Philosophy</h4>
-                    <p>Believes in Simple Living</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🌿 Interests</h4>
-                    <p>Gardening, Cooking, Trekking, and reading wildlife & sustainability news</p>
-                </div>
-                <div class="expertise-card">
-                    <h4>🌟 Role Model</h4>
-                    <p>Jon Jandai - my hero</p>
-                </div>
-            </div>
-        </section>
-
-        <footer>
-            <p>&copy; 2025 Saibal Dey. All rights reserved. | Powered by GitHub Pages</p>
-            <p>Let's connect and build amazing things together! 🚀</p>
-        </footer>
+          <div class="social-row">
+            <div class="icon-badge">G</div>
+            <div class="icon-badge">in</div>
+            <div class="icon-badge">X</div>
+            <div class="icon-badge">M</div>
+          </div>
+        </div>
+      </main>
     </div>
+  </div>
 </body>
 </html>
