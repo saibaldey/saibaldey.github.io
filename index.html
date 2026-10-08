@@ -84,7 +84,14 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 .mini:hover{box-shadow:0 10px 30px rgba(0,0,0,.12);z-index:2}
 .mini b{font:700 20px/1.15 Manrope;color:var(--ink)}
 .mini span{font-size:12px;color:var(--mute);margin-top:6px}
-.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.timeline-wrap{position:relative;padding:0 40px}
+.carousel-nav{display:flex;justify-content:center;gap:16px;margin-top:32px}
+.carousel-btn{width:44px;height:44px;border:1px solid var(--hair);border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;transition:all .2s}
+.carousel-btn:hover{background:var(--red);border-color:var(--red);color:#0c1620}
+.carousel-btn:disabled{opacity:0.5;cursor:not-allowed}
+.timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;scroll-behavior:smooth}
+.timeline.sliding{overflow-x:auto;scroll-snap-type:x mandatory}
+.timeline-item{scroll-snap-align:start;scroll-snap-stop:always}
 .job{background:var(--pin-bg);border-radius:var(--r);padding:32px;min-height:320px;transition:transform .2s ease,box-shadow .2s ease}
 .job:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.12)}
 .period{font-size:12px;color:var(--mute);font-weight:600}.company{font-weight:700;margin-top:36px}
@@ -92,15 +99,6 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 .job p{font-size:14px;line-height:1.55;color:var(--body)}
 .tags{display:flex;flex-wrap:nowrap;gap:6px;margin-top:20px;overflow:hidden}
 .tags span{background:var(--pin-white);border-radius:var(--pill);padding:7px 10px;font-size:12px;font-weight:700;color:var(--ink)}
-.employment-wrap{background:var(--soft);padding:60px 0}
-.employment-table-wrap{background:#1e2a32;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 32px rgba(0,0,0,.12)}
-.employment-table{width:100%;border-collapse:collapse;color:#edf3f8}
-.employment-table th,.employment-table td{padding:16px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.08);vertical-align:top}
-.employment-table thead th{background:rgba(255,255,255,0.08);font-weight:800;color:#edf3f8;font-size:14px}
-.employment-table tbody tr:nth-child(even){background:rgba(255,255,255,0.02)}
-.employment-table tbody tr:hover{background:rgba(255,255,255,0.04)}
-.employment-table td{font-size:14px;line-height:1.5;color:#dfeaf2}
-.employment-table .date {white-space:nowrap}
 .certs{background:var(--soft)}
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cert{background:var(--pin-white);border-radius:var(--r);padding:24px;display:flex;gap:16px;align-items:center;transition:transform .2s ease,box-shadow .2s ease}
@@ -114,25 +112,28 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 footer{padding:32px 0;color:var(--mute);font-size:14px}
 .footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .footer-links a{text-decoration:none;margin-left:16px}
-@media(max-width:1024px){.masonry{columns:3}}
+@media(max-width:1024px){
+  .masonry{columns:3}
+  .timeline{grid-template-columns:repeat(2,1fr)}
+  .timeline-wrap{padding:0}
+}
 @media(max-width:768px){
   .wrap{width:calc(100% - 32px)}
   .nav{grid-template-columns:auto 1fr auto}.search{width:48px;justify-self:end;padding:0;justify-content:center}.search input{display:none}
   .nav-actions .ghost,.nav-actions .secondary{display:none}
   .masonry{columns:2}
   .feature{grid-template-columns:1fr}.feature:nth-child(even) .copy,.feature:nth-child(even) .board{order:initial}
-  .timeline,.cert-grid{grid-template-columns:1fr}
+  .timeline{grid-template-columns:1fr}
+  .timeline-wrap{padding:0}
   .cta-in{flex-direction:column;align-items:flex-start}
   .giant{font-size:52px}
-  .employment-table{font-size:12px}
-  .employment-table th,.employment-table td{padding:12px 10px}
 }
 @media(max-width:480px){
-  .wrap{width:calc(100% - 24px)}.hero,.section,.features,.employment-wrap{padding:32px 0}
+  .wrap{width:calc(100% - 24px)}.hero,.section,.features{padding:32px 0}
   .masonry{columns:1;column-gap:6px}.pin{margin-bottom:6px}
   .section-title h2,.copy h2{font-size:36px}.feature{gap:16px;margin-bottom:32px}.copy{padding:16px 4px}
   .giant{font-size:44px}
-  .employment-table th:nth-child(1), .employment-table td:nth-child(1), .employment-table th:nth-child(6), .employment-table td:nth-child(6){display:none}
+  .timeline-wrap{padding:0}
 }
 </style>
 </head>
@@ -223,91 +224,93 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
   </div>
 </section>
 
-<section class="employment-wrap" id="journey">
+<section class="section" id="journey">
   <div class="wrap">
     <div class="section-title">
-      <h2>Employment Summary</h2>
-      <p>Career progression across Cloud, DevOps, SRE and platform leadership roles over 21+ years.</p>
+      <h2>Employment Journey</h2>
+      <p>Career progression across Cloud, DevOps, SRE and platform leadership roles over 21+ years. Navigate through my professional experience.</p>
     </div>
-    <div class="employment-table-wrap">
-      <table class="employment-table">
-        <thead>
-          <tr>
-            <th>Serial No</th>
-            <th>Organization</th>
-            <th>Date of Joining</th>
-            <th>Date of Release</th>
-            <th>Role</th>
-            <th>Duration of Employment</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>1</td>
-            <td>Megh Infotech Pvt Ltd</td>
-            <td class="date">1st April, 2025</td>
-            <td class="date">Till Date</td>
-            <td>DevOps Specialist</td>
-            <td>Present</td>
-          </tr>
-          <tr>
-            <td>2</td>
-            <td>Megh Consulting</td>
-            <td class="date">8th April, 2024</td>
-            <td class="date">31st March, 2025</td>
-            <td>DevOps Specialist</td>
-            <td>1 Year</td>
-          </tr>
-          <tr>
-            <td>3</td>
-            <td>Srijan Technologies</td>
-            <td class="date">4th January, 2023</td>
-            <td class="date">4th April, 2024</td>
-            <td>DevOps Specialist</td>
-            <td>1 Year 3 Months</td>
-          </tr>
-          <tr>
-            <td>4</td>
-            <td>TwoPi-Radian Infotech</td>
-            <td class="date">31st Aug, 2018</td>
-            <td class="date">31st Dec, 2022</td>
-            <td>DevOps Lead</td>
-            <td>4 Years 5 Months</td>
-          </tr>
-          <tr>
-            <td>5</td>
-            <td>Seamless Distribution System AB</td>
-            <td class="date">06th July, 2016</td>
-            <td class="date">30th Aug, 2018</td>
-            <td>DevOps Lead</td>
-            <td>2+ Years</td>
-          </tr>
-          <tr>
-            <td>6</td>
-            <td>TATA Consultancy Services</td>
-            <td class="date">03rd March, 2011</td>
-            <td class="date">05th July, 2016</td>
-            <td>DevOps Lead</td>
-            <td>5+ Years</td>
-          </tr>
-          <tr>
-            <td>7</td>
-            <td>Aricent Technologies</td>
-            <td class="date">26th July, 2010</td>
-            <td class="date">28th Feb, 2011</td>
-            <td>Sr. Engineer Software</td>
-            <td>1 Year</td>
-          </tr>
-          <tr>
-            <td>8</td>
-            <td>Sasken Communication Technologies Ltd.</td>
-            <td class="date">18th July, 2005</td>
-            <td class="date">22nd July, 2010</td>
-            <td>Sr. Engineer Software</td>
-            <td>5+ Years</td>
-          </tr>
-        </tbody>
-      </table>
+    
+    <div class="timeline-wrap">
+      <div class="timeline" id="timelineContainer">
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">APR 2025 → PRESENT</div>
+            <div class="company">Megh Infotech Pvt Ltd</div>
+            <h3>DevOps Specialist</h3>
+            <p>AI-accelerated infrastructure automation, GitHub Copilot integration for code generation, and advanced RCA with ML-powered insights.</p>
+            <div class="tags"><span>AI</span><span>Cloud</span><span>Automation</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">APR 2024 → MAR 2025</div>
+            <div class="company">Megh Consulting</div>
+            <h3>DevOps Specialist</h3>
+            <p>Focused on delivery automation, observability, release acceleration and service reliability across cloud-native workloads.</p>
+            <div class="tags"><span>DevOps</span><span>SRE</span><span>CI/CD</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">JAN 2023 → APR 2024</div>
+            <div class="company">Srijan Technologies</div>
+            <h3>DevOps Specialist</h3>
+            <p>Built infrastructure pipelines, cloud environment automation, and DevOps enablement for faster and safer deployment.</p>
+            <div class="tags"><span>Infrastructure</span><span>Platform</span><span>Delivery</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">AUG 2018 → DEC 2022</div>
+            <div class="company">TwoPi-Radian Infotech</div>
+            <h3>DevOps Lead</h3>
+            <p>Architecture design, team leadership, infrastructure automation, disaster recovery planning, and enterprise cloud migrations.</p>
+            <div class="tags"><span>Leadership</span><span>Architecture</span><span>Migration</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">JUL 2016 → AUG 2018</div>
+            <div class="company">Seamless Distribution System AB</div>
+            <h3>DevOps Lead</h3>
+            <p>Managed infrastructure for telecom and distribution systems, implemented CI/CD pipelines and led DevOps transformation initiatives.</p>
+            <div class="tags"><span>Telecom</span><span>CI/CD</span><span>Leadership</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">MAR 2011 → JUL 2016</div>
+            <div class="company">TATA Consultancy Services</div>
+            <h3>DevOps Lead</h3>
+            <p>Enterprise infrastructure management, automation frameworks, and DevOps enablement for large-scale global projects.</p>
+            <div class="tags"><span>Enterprise</span><span>Automation</span><span>Global</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">JUL 2010 → FEB 2011</div>
+            <div class="company">Aricent Technologies</div>
+            <h3>Sr. Engineer Software</h3>
+            <p>Software engineering and infrastructure optimization for telecom and embedded systems.</p>
+            <div class="tags"><span>Telecom</span><span>Embedded</span><span>Engineering</span></div>
+          </div>
+        </div>
+        <div class="timeline-item">
+          <div class="job">
+            <div class="period">JUL 2005 → JUL 2010</div>
+            <div class="company">Sasken Communication Technologies Ltd.</div>
+            <h3>Sr. Engineer Software</h3>
+            <p>Core software engineering, protocol development, and infrastructure support for telecom systems and applications.</p>
+            <div class="tags"><span>Protocols</span><span>Telecom</span><span>Systems</span></div>
+          </div>
+        </div>
+      </div>
+      
+      <div class="carousel-nav">
+        <button class="carousel-btn" id="prevBtn" onclick="slideTimeline(-1)">←</button>
+        <button class="carousel-btn" id="nextBtn" onclick="slideTimeline(1)">→</button>
+      </div>
     </div>
   </div>
 </section>
@@ -315,14 +318,14 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
 <section class="section certs" id="credentials">
   <div class="wrap">
     <div class="section-title">
-      <h2>Credentials</h2>
+      <h2>Professional Certifications</h2>
       <p>Cloud, automation, and platform expertise supported by certifications and hands-on implementation experience.</p>
     </div>
     <div class="cert-grid">
-      <div class="cert"><div class="badge">AWS</div><div><b>Cloud Practitioner</b><span>Amazon Web Services</span></div></div>
-      <div class="cert"><div class="badge">AZ</div><div><b>Azure Fundamentals</b><span>Microsoft</span></div></div>
-      <div class="cert"><div class="badge">GCP</div><div><b>Google Cloud</b><span>Cloud Platform</span></div></div>
-      <div class="cert"><div class="badge">K8s</div><div><b>Kubernetes & Containers</b><span>Platform engineering</span></div></div>
+      <div class="cert"><div class="badge">AWS</div><div><b>AWS Certified Cloud Practitioner</b><span>Amazon Web Services</span></div></div>
+      <div class="cert"><div class="badge">AZ</div><div><b>Microsoft Azure Fundamentals</b><span>Microsoft</span></div></div>
+      <div class="cert"><div class="badge">GCP</div><div><b>Google Cloud Fundamentals</b><span>Google Cloud</span></div></div>
+      <div class="cert"><div class="badge">K8s</div><div><b>Kubernetes & Container Platform</b><span>Platform engineering</span></div></div>
     </div>
   </div>
 </section>
@@ -330,7 +333,7 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
 <section class="cta">
   <div class="wrap cta-in">
     <div>
-      <h2>Let’s build the next layer of reliable operations.</h2>
+      <h2>Let's build the next layer of reliable operations.</h2>
       <p>Cloud modernization, DevOps transformation, SRE enablement, AI-assisted engineering and infrastructure strategy.</p>
     </div>
     <a class="btn primary" href="mailto:dev.saibal@gmail.com">Get in touch</a>
@@ -386,6 +389,32 @@ document.getElementById('search').addEventListener('input',e=>{
   chips.forEach(x=>x.classList.remove('active'));
   filterPins(e.target.value);
 });
+
+let currentSlide = 0;
+const timeline = document.getElementById('timelineContainer');
+const timelineItems = timeline.querySelectorAll('.timeline-item');
+const totalItems = timelineItems.length;
+const itemsPerView = 3;
+
+function updateCarouselButtons() {
+  document.getElementById('prevBtn').disabled = currentSlide === 0;
+  document.getElementById('nextBtn').disabled = currentSlide >= totalItems - itemsPerView;
+}
+
+function slideTimeline(direction) {
+  if (direction === 1 && currentSlide < totalItems - itemsPerView) {
+    currentSlide++;
+  } else if (direction === -1 && currentSlide > 0) {
+    currentSlide--;
+  }
+  
+  const scrollAmount = currentSlide * (100 / itemsPerView + 0.3);
+  timeline.style.transform = `translateX(-${scrollAmount * (timeline.offsetWidth / 100)}px)`;
+  updateCarouselButtons();
+}
+
+window.addEventListener('load', updateCarouselButtons);
+window.addEventListener('resize', updateCarouselButtons);
 </script>
 </body>
 </html>
