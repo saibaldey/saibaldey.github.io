@@ -92,6 +92,15 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 .job p{font-size:14px;line-height:1.55;color:var(--body)}
 .tags{display:flex;flex-wrap:nowrap;gap:6px;margin-top:20px;overflow:hidden}
 .tags span{background:var(--pin-white);border-radius:var(--pill);padding:7px 10px;font-size:12px;font-weight:700;color:var(--ink)}
+.employment-wrap{background:var(--soft);padding:60px 0}
+.employment-table-wrap{background:#1e2a32;border-radius:12px;overflow:hidden;border:1px solid rgba(255,255,255,0.08);box-shadow:0 10px 32px rgba(0,0,0,.12)}
+.employment-table{width:100%;border-collapse:collapse;color:#edf3f8}
+.employment-table th,.employment-table td{padding:16px 14px;text-align:left;border-bottom:1px solid rgba(255,255,255,0.08);vertical-align:top}
+.employment-table thead th{background:rgba(255,255,255,0.08);font-weight:800;color:#edf3f8;font-size:14px}
+.employment-table tbody tr:nth-child(even){background:rgba(255,255,255,0.02)}
+.employment-table tbody tr:hover{background:rgba(255,255,255,0.04)}
+.employment-table td{font-size:14px;line-height:1.5;color:#dfeaf2}
+.employment-table .date {white-space:nowrap}
 .certs{background:var(--soft)}
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cert{background:var(--pin-white);border-radius:var(--r);padding:24px;display:flex;gap:16px;align-items:center;transition:transform .2s ease,box-shadow .2s ease}
@@ -115,12 +124,15 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
   .timeline,.cert-grid{grid-template-columns:1fr}
   .cta-in{flex-direction:column;align-items:flex-start}
   .giant{font-size:52px}
+  .employment-table{font-size:12px}
+  .employment-table th,.employment-table td{padding:12px 10px}
 }
 @media(max-width:480px){
-  .wrap{width:calc(100% - 24px)}.hero,.section,.features{padding:32px 0}
+  .wrap{width:calc(100% - 24px)}.hero,.section,.features,.employment-wrap{padding:32px 0}
   .masonry{columns:1;column-gap:6px}.pin{margin-bottom:6px}
   .section-title h2,.copy h2{font-size:36px}.feature{gap:16px;margin-bottom:32px}.copy{padding:16px 4px}
   .giant{font-size:44px}
+  .employment-table th:nth-child(1), .employment-table td:nth-child(1), .employment-table th:nth-child(6), .employment-table td:nth-child(6){display:none}
 }
 </style>
 </head>
@@ -211,34 +223,91 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
   </div>
 </section>
 
-<section class="section" id="journey">
+<section class="employment-wrap" id="journey">
   <div class="wrap">
     <div class="section-title">
-      <h2>Career path</h2>
-      <p>A long arc across cloud architecture, platform engineering, DevOps leadership, and transformation work, with a consistent focus on scaling systems and teams.</p>
+      <h2>Employment Summary</h2>
+      <p>Career progression across Cloud, DevOps, SRE and platform leadership roles over 21+ years.</p>
     </div>
-    <div class="timeline">
-      <article class="job">
-        <div class="period">APR 2025 → PRESENT</div>
-        <div class="company">Megh Infotech</div>
-        <h3>DevOps Specialist</h3>
-        <p>Driving AI-augmented infrastructure automation, modernization programs and reusable platform practices for scalable execution.</p>
-        <div class="tags"><span>AI Ops</span><span>Cloud</span><span>Automation</span></div>
-      </article>
-      <article class="job">
-        <div class="period">APR 2024 → MAR 2025</div>
-        <div class="company">Megh Consulting</div>
-        <h3>DevOps Specialist</h3>
-        <p>Focused on delivery automation, observability, release acceleration and service reliability across cloud-native workloads.</p>
-        <div class="tags"><span>DevOps</span><span>SRE</span><span>CI/CD</span></div>
-      </article>
-      <article class="job">
-        <div class="period">JAN 2023 → APR 2024</div>
-        <div class="company">Srijan Technologies</div>
-        <h3>DevOps Specialist</h3>
-        <p>Built infrastructure pipelines, cloud environment automation, and DevOps enablement for faster and safer deployment.</p>
-        <div class="tags"><span>Infrastructure</span><span>Platform</span><span>Delivery</span></div>
-      </article>
+    <div class="employment-table-wrap">
+      <table class="employment-table">
+        <thead>
+          <tr>
+            <th>Serial No</th>
+            <th>Organization</th>
+            <th>Date of Joining</th>
+            <th>Date of Release</th>
+            <th>Role</th>
+            <th>Duration of Employment</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Megh Infotech Pvt Ltd</td>
+            <td class="date">1st April, 2025</td>
+            <td class="date">Till Date</td>
+            <td>DevOps Specialist</td>
+            <td>Present</td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Megh Consulting</td>
+            <td class="date">8th April, 2024</td>
+            <td class="date">31st March, 2025</td>
+            <td>DevOps Specialist</td>
+            <td>1 Year</td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Srijan Technologies</td>
+            <td class="date">4th January, 2023</td>
+            <td class="date">4th April, 2024</td>
+            <td>DevOps Specialist</td>
+            <td>1 Year 3 Months</td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>TwoPi-Radian Infotech</td>
+            <td class="date">31st Aug, 2018</td>
+            <td class="date">31st Dec, 2022</td>
+            <td>DevOps Lead</td>
+            <td>4 Years 5 Months</td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Seamless Distribution System AB</td>
+            <td class="date">06th July, 2016</td>
+            <td class="date">30th Aug, 2018</td>
+            <td>DevOps Lead</td>
+            <td>2+ Years</td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>TATA Consultancy Services</td>
+            <td class="date">03rd March, 2011</td>
+            <td class="date">05th July, 2016</td>
+            <td>DevOps Lead</td>
+            <td>5+ Years</td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Aricent Technologies</td>
+            <td class="date">26th July, 2010</td>
+            <td class="date">28th Feb, 2011</td>
+            <td>Sr. Engineer Software</td>
+            <td>1 Year</td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Sasken Communication Technologies Ltd.</td>
+            <td class="date">18th July, 2005</td>
+            <td class="date">22nd July, 2010</td>
+            <td>Sr. Engineer Software</td>
+            <td>5+ Years</td>
+          </tr>
+        </tbody>
+      </table>
     </div>
   </div>
 </section>
