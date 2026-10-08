@@ -3,76 +3,61 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Saibal Dey | AI-Accelerated Cloud/DevOps/SRE</title>
-<meta name="description" content="DevOps Specialist with 21+ years of experience in AI-Driven Cloud, Kubernetes, Infrastructure as Code, and SRE practices.">
+<title>Saibal Dey | Cloud & DevOps Architect</title>
+<meta name="description" content="Cloud and DevOps architect with 21+ years of experience in automation, SRE, Kubernetes, AI-assisted operations and platform modernization.">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Manrope:wght@600;700&display=swap">
 <style>
 :root{
- --red:#f5d301;--red2:#f6ca00;--ink:#000;--body:#33332e;--mute:#62625b;
- --hair:#dadad3;--soft:#fbfbf9;--card:#f6f6f3;--secondary:#e5e5e0;--dark:#262622;
- --r:16px;--rl:32px;--pill:9999px;
- --bg:#ffffff;--nav-bg:rgba(255,255,255,.97);--pin-bg:#f6f6f3;--pin-white:#ffffff;
- --nodes-pill:#fff;--nodes-pill-text:#000;
+  --red:#f2d112;--red2:#e7c800;--ink:#0c1620;--body:#2f3f49;--mute:#516673;
+  --hair:#dfe8ee;--soft:#f9fafb;--card:#f3f6f8;--secondary:#edf2f5;--dark:#12212d;
+  --r:16px;--rl:28px;--pill:9999px;
+  --bg:#ffffff;--nav-bg:rgba(255,255,255,.96);--pin-bg:#f4f7f9;--pin-white:#ffffff;
+  --nodes-pill:#fff;--nodes-pill-text:#0c1620;
 }
 body.dark{
- --ink:#f0f4f8;--body:#c8d8e8;--mute:#8a9aaa;
- --hair:#1e2d3e;--soft:#0f1520;--card:#161f2e;--secondary:#1a2a3a;--dark:#0a0f1a;
- --bg:#0f1520;--nav-bg:rgba(15,21,32,.97);--pin-bg:#161f2e;--pin-white:#1e2d3e;
- --nodes-pill:rgba(255,255,255,.1);--nodes-pill-text:#e0ecf8;
+  --ink:#edf3f8;--body:#c7d7e5;--mute:#9bb0c2;
+  --hair:#203245;--soft:#0d1720;--card:#112230;--secondary:#1a2c3d;--dark:#091822;
+  --bg:#0d1720;--nav-bg:rgba(13,23,32,.96);--pin-bg:#132635;--pin-white:#142b3b;
+  --nodes-pill:rgba(255,255,255,.08);--nodes-pill-text:#edf3f8;
 }
-
-/* theme toggle button */
-.theme-btn{
- min-height:40px;border:1px solid var(--hair);border-radius:var(--pill);
- padding:0 14px;font:700 13px Inter;display:inline-flex;align-items:center;
- gap:6px;cursor:pointer;background:var(--card);color:var(--ink);
- transition:background .15s,border-color .15s;
-}
-.theme-btn:hover{border-color:var(--ink)}
 *{box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .2s,color .2s}
 a{color:inherit;text-decoration:none}.wrap{width:min(1280px,calc(100% - 48px));margin:auto}
-
-/* nav */
-.nav-shell{position:sticky;top:0;z-index:30;background:var(--nav-bg);border-bottom:1px solid var(--hair)}
+.theme-btn{min-height:40px;border:1px solid var(--hair);border-radius:var(--pill);padding:0 14px;font:700 13px Inter;display:inline-flex;align-items:center;gap:6px;cursor:pointer;background:var(--card);color:var(--ink);transition:background .15s,border-color .15s}
+.theme-btn:hover{border-color:var(--ink)}
+.nav-shell{position:sticky;top:0;z-index:60;background:var(--nav-bg);border-bottom:1px solid var(--hair)}
 .nav{height:64px;display:grid;grid-template-columns:auto minmax(260px,560px) auto;gap:20px;align-items:center}
 .logo{display:flex;align-items:center;gap:10px;text-decoration:none;font-weight:700;white-space:nowrap}
-.logo-mark{width:36px;height:36px;border-radius:50%;background:var(--red);color:#0b1f2d;display:grid;place-items:center;font:700 14px Manrope}
+.logo-mark{width:36px;height:36px;border-radius:50%;background:var(--red);color:#0d1b23;display:grid;place-items:center;font:700 14px Manrope}
 .search{height:48px;border-radius:var(--pill);background:var(--card);display:flex;align-items:center;gap:10px;padding:0 16px;color:var(--mute)}
 .search input{width:100%;border:0;outline:0;background:transparent;font:500 15px Inter;color:var(--ink)}
 .nav-actions{display:flex;align-items:center;gap:8px}
 .btn{min-height:40px;border:0;border-radius:var(--r);padding:0 14px;font:700 14px Inter;display:inline-flex;align-items:center;justify-content:center;text-decoration:none;cursor:pointer}
-.primary{background:var(--red);color:#0b1f2d}.primary:active{background:var(--red2)}
+.primary{background:var(--red);color:#0c1620}.primary:active{background:var(--red2)}
 .secondary{background:var(--secondary);color:var(--ink)}.ghost{background:transparent;color:var(--ink)}
-
-/* hero */
 .hero{background:var(--soft);padding:64px 0 56px}
-.hero-inner{text-align:center;max-width:950px;margin:auto}
-.kicker{color:var(--red);font-size:14px;font-weight:700;margin-bottom:16px}
-h1{font:600 clamp(44px,6.4vw,70px)/1.1 Manrope,Inter,sans-serif;letter-spacing:-1.2px;margin:0}
-.hero p{max-width:720px;margin:24px auto 0;color:var(--body);font-size:18px;line-height:1.5}
+.hero-inner{text-align:center;max-width:960px;margin:auto}
+.kicker{color:#caa700;font-size:14px;font-weight:700;margin-bottom:16px;letter-spacing:0.08em;text-transform:uppercase}
+h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1.1px;margin:0}
+.hero p{max-width:760px;margin:24px auto 0;color:var(--body);font-size:18px;line-height:1.55}
 .hero-actions,.chips{display:flex;justify-content:center;gap:8px;flex-wrap:wrap;margin-top:26px}
 .hero-actions .btn{min-height:44px;padding:0 18px}
 .chip{border:0;border-radius:var(--pill);background:var(--pin-bg);color:var(--ink);padding:10px 16px;font:700 14px Inter;cursor:pointer}
-.chip.active{background:#000;color:#fff}
-
-/* common */
+.chip.active{background:#0d1620;color:#fff}
 .section{padding:64px 0;background:var(--bg)}
 .section-title{text-align:center;max-width:720px;margin:0 auto 32px}
-.section-title h2{font:700 44px/1.15 Manrope;letter-spacing:-.8px;margin:0 0 12px}
+.section-title h2{font:700 42px/1.15 Manrope;letter-spacing:-.8px;margin:0 0 12px}
 .section-title p{color:var(--mute);line-height:1.5;margin:0}
-
-/* masonry */
 .masonry{columns:4;column-gap:8px}
 .pin{display:inline-block;width:100%;vertical-align:top;break-inside:avoid;margin:0 0 8px;border-radius:var(--r);overflow:hidden;background:var(--pin-bg)}
 .pin.large{border-radius:var(--rl)}
 .pin-body{padding:24px}
-.pin h3{font:700 28px/1.2 Manrope;letter-spacing:-1.2px;margin:0 0 12px}
+.pin h3{font:700 24px/1.22 Manrope;letter-spacing:-.8px;margin:0 0 12px}
 .pin p{font-size:14px;line-height:1.55;color:var(--body);margin:0}
 .meta{font-size:12px;color:var(--mute);font-weight:600;margin-bottom:18px}
-.pin.red{background:var(--red);color:#0b1f2d}.pin.dark{background:var(--dark);color:#fff}
+.pin.red{background:linear-gradient(135deg,#f2d112,#ebc409);color:#0c1620}.pin.dark{background:var(--dark);color:#fff}
 .pin.red p,.pin.red .meta,.pin.dark p,.pin.dark .meta{color:rgba(255,255,255,.78)}
 .hero-pin{min-height:430px;padding:32px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
 .giant{font:700 clamp(28px,3.8vw,58px)/.88 Manrope;letter-spacing:-2px;word-break:break-word;overflow-wrap:break-word;width:100%}
@@ -80,43 +65,25 @@ h1{font:600 clamp(44px,6.4vw,70px)/1.1 Manrope,Inter,sans-serif;letter-spacing:-
 .nodes span{padding:11px 15px;border-radius:var(--pill);background:var(--nodes-pill);font-size:13px;font-weight:700;color:var(--nodes-pill-text)}
 .nodes span:first-child{background:var(--ink);color:var(--bg)}
 .pin.dark .nodes span{background:rgba(255,255,255,.12);color:#fff}
-.pin-label{display:inline-block;margin:0 16px 16px;background:var(--pin-white);border-radius:var(--pill);padding:8px 14px;font-size:12px;font-weight:700;color:var(--ink)}
 .short{min-height:200px}.mid{min-height:280px}
-
-/* editorial feature rows */
 .features{background:var(--soft);padding:64px 0}
 .feature{display:grid;grid-template-columns:1fr 1fr;gap:32px;align-items:center;margin-bottom:64px}
 .feature:last-child{margin:0}
 .feature:nth-child(even) .copy{order:2}
 .feature:nth-child(even) .board{order:1}
 .copy{padding:32px}
-.copy h2{font:700 44px/1.15 Manrope;letter-spacing:-.8px;margin:0 0 16px}
+.copy h2{font:700 42px/1.15 Manrope;letter-spacing:-.8px;margin:0 0 16px}
 .copy p{line-height:1.6;color:var(--body)}
 .board{background:var(--card);border-radius:var(--rl);padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
-.mini{
-  border-radius:var(--r);height:235px;
-  perspective:800px;cursor:default;position:relative;
-}
-.mini-front,.mini-back{
-  position:absolute;inset:0;
-  border-radius:var(--r);
-  display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;
-  padding:20px;
-  backface-visibility:hidden;
-  -webkit-backface-visibility:hidden;
-  transition:transform .45s ease;
-  overflow:hidden;
-}
+.mini{border-radius:var(--r);height:235px;perspective:800px;cursor:default;position:relative}
+.mini-front,.mini-back{position:absolute;inset:0;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .45s ease;overflow:hidden}
 .mini-front{transform:rotateY(0deg)}
-.mini-back{transform:rotateY(180deg);font-size:4.5rem;line-height:1}
-.mini-back svg{max-width:90%;max-height:180px;width:auto;height:auto}
+.mini-back{transform:rotateY(180deg);font-size:4rem;line-height:1}
 .mini:hover .mini-front{transform:rotateY(-180deg)}
 .mini:hover .mini-back{transform:rotateY(0deg)}
-.mini:hover{box-shadow:0 10px 30px rgba(0,0,0,.15);z-index:2}
+.mini:hover{box-shadow:0 10px 30px rgba(0,0,0,.12);z-index:2}
 .mini b{font:700 20px/1.15 Manrope;color:var(--ink)}
 .mini span{font-size:12px;color:var(--mute);margin-top:6px}
-
-/* experience */
 .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
 .job{background:var(--pin-bg);border-radius:var(--r);padding:32px;min-height:320px;transition:transform .2s ease,box-shadow .2s ease}
 .job:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.12)}
@@ -125,16 +92,12 @@ h1{font:600 clamp(44px,6.4vw,70px)/1.1 Manrope,Inter,sans-serif;letter-spacing:-
 .job p{font-size:14px;line-height:1.55;color:var(--body)}
 .tags{display:flex;flex-wrap:nowrap;gap:6px;margin-top:20px;overflow:hidden}
 .tags span{background:var(--pin-white);border-radius:var(--pill);padding:7px 10px;font-size:12px;font-weight:700;color:var(--ink)}
-
-/* credentials */
 .certs{background:var(--soft)}
 .cert-grid{display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .cert{background:var(--pin-white);border-radius:var(--r);padding:24px;display:flex;gap:16px;align-items:center;transition:transform .2s ease,box-shadow .2s ease}
 .cert:hover{transform:translateY(-6px) scale(1.02);box-shadow:0 12px 32px rgba(0,0,0,.12)}
 .badge{width:48px;height:48px;border-radius:50%;background:var(--card);display:grid;place-items:center;font-size:12px;font-weight:700;flex:0 0 auto}
 .cert b{display:block;font-size:14px}.cert span{color:var(--mute);font-size:12px;margin-top:4px;display:block}
-
-/* cta */
 .cta{background:var(--dark);color:#fff;padding:48px 0}
 .cta-in{display:flex;justify-content:space-between;align-items:center;gap:32px}
 .cta h2{font:700 28px/1.2 Manrope;letter-spacing:-1.2px;margin:0}
@@ -142,123 +105,180 @@ h1{font:600 clamp(44px,6.4vw,70px)/1.1 Manrope,Inter,sans-serif;letter-spacing:-
 footer{padding:32px 0;color:var(--mute);font-size:14px}
 .footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .footer-links a{text-decoration:none;margin-left:16px}
-
-/* responsive */
 @media(max-width:1024px){.masonry{columns:3}}
 @media(max-width:768px){
- .wrap{width:calc(100% - 32px)}
- .nav{grid-template-columns:auto 1fr auto}.search{width:48px;justify-self:end;padding:0;justify-content:center}.search input{display:none}
- .nav-actions .ghost,.nav-actions .secondary{display:none}
- .masonry{columns:2}
- .feature{grid-template-columns:1fr}.feature:nth-child(even) .copy,.feature:nth-child(even) .board{order:initial}
- .timeline,.cert-grid{grid-template-columns:1fr}
- .cta-in{flex-direction:column;align-items:flex-start}
- .giant{font-size:52px}
+  .wrap{width:calc(100% - 32px)}
+  .nav{grid-template-columns:auto 1fr auto}.search{width:48px;justify-self:end;padding:0;justify-content:center}.search input{display:none}
+  .nav-actions .ghost,.nav-actions .secondary{display:none}
+  .masonry{columns:2}
+  .feature{grid-template-columns:1fr}.feature:nth-child(even) .copy,.feature:nth-child(even) .board{order:initial}
+  .timeline,.cert-grid{grid-template-columns:1fr}
+  .cta-in{flex-direction:column;align-items:flex-start}
+  .giant{font-size:52px}
 }
 @media(max-width:480px){
- .wrap{width:calc(100% - 24px)}.hero,.section,.features{padding:32px 0}
- .masonry{columns:1;column-gap:6px}.pin{margin-bottom:6px}
- .section-title h2,.copy h2{font-size:36px}.feature{gap:16px;margin-bottom:32px}.copy{padding:16px 4px}
- .giant{font-size:44px}
+  .wrap{width:calc(100% - 24px)}.hero,.section,.features{padding:32px 0}
+  .masonry{columns:1;column-gap:6px}.pin{margin-bottom:6px}
+  .section-title h2,.copy h2{font-size:36px}.feature{gap:16px;margin-bottom:32px}.copy{padding:16px 4px}
+  .giant{font-size:44px}
 }
 </style>
 </head>
 <body>
-
 <header class="nav-shell">
- <div class="wrap nav">
-  <a class="logo" href="#top"><span class="logo-mark">SD</span>Saibal Dey</a>
-  <label class="search">⌕ <input id="search" placeholder="Search skills, ideas, technologies..."></label>
-  <div class="nav-actions">
-   <button class="theme-btn" id="themeToggle" onclick="toggleTheme()"><span id="themeIcon">☾</span><span id="themeLabel">Dark</span></button>
-   <a class="btn ghost" href="#journey">Journey</a>
-   <a class="btn secondary" href="#credentials">Credentials</a>
-   <a class="btn primary" href="mailto:dev.saibal@gmail.com">Connect</a>
+  <div class="wrap nav">
+    <a class="logo" href="#top"><span class="logo-mark">SD</span>Saibal Dey</a>
+    <label class="search">⌕ <input id="search" placeholder="Search skills, ideas, technologies..."></label>
+    <div class="nav-actions">
+      <button class="theme-btn" id="themeToggle" onclick="toggleTheme()"><span id="themeIcon">☾</span><span id="themeLabel">Dark</span></button>
+      <a class="btn ghost" href="#journey">Journey</a>
+      <a class="btn secondary" href="#credentials">Credentials</a>
+      <a class="btn primary" href="mailto:dev.saibal@gmail.com">Connect</a>
+    </div>
   </div>
- </div>
 </header>
 
 <main id="top">
 <section class="hero">
- <div class="wrap hero-inner">
-  <div class="kicker">AI-Accelerated · Cloud · DevOps · SRE</div>
-  <h1>I build AI-driven infrastructure<br>that scales with you</h1>
-  <p>DevOps Specialist with 21+ years of experience in Cloud Architecture, Kubernetes, Infrastructure Automation and SRE.<br>I build platforms teams run — not platforms that run on me.<br>Founder of Megh Infotech.</p>
-  <div class="hero-actions"><a class="btn primary" href="#discover">Explore my work</a><a class="btn secondary" href="#journey">My journey</a></div>
-  <div class="chips">
-   <button class="chip active" data-filter="all">All</button><button class="chip" data-filter="cloud">Cloud</button><button class="chip" data-filter="kubernetes">Kubernetes</button><button class="chip" data-filter="automation">Automation</button><button class="chip" data-filter="sre">SRE</button>
+  <div class="wrap hero-inner">
+    <div class="kicker">Cloud • DevOps • SRE • AI</div>
+    <h1>Designing resilient systems<br>for real-world growth</h1>
+    <p>I help organizations modernize infrastructure, automate delivery, improve reliability, and turn operational complexity into scalable clarity. With 21+ years across consulting, architecture, engineering, and leadership roles, I build systems that support business growth rather than slow it down.</p>
+    <div class="hero-actions">
+      <a class="btn primary" href="#discover">Explore my work</a>
+      <a class="btn secondary" href="#journey">My journey</a>
+    </div>
+    <div class="chips">
+      <button class="chip active" data-filter="all">All</button>
+      <button class="chip" data-filter="cloud">Cloud</button>
+      <button class="chip" data-filter="kubernetes">Kubernetes</button>
+      <button class="chip" data-filter="automation">Automation</button>
+      <button class="chip" data-filter="sre">SRE</button>
+    </div>
   </div>
- </div>
 </section>
 
 <section class="section" id="discover">
- <div class="wrap">
-  <div class="section-title"><h2>Ideas I build around</h2><p>Technologies, principles and engineering practices that shape how I approach cloud infrastructure and DevOps.</p></div>
-  <div class="masonry">
-   <article class="pin large red searchable" data-tags="cloud open source ai"><div class="hero-pin"><div class="meta">AI-POWERED</div><div class="giant">GITHUB<br>COPILOT</div><p>Infrastructure automation and intelligent code generation powered by AI.</p></div></article>
-   <article class="pin searchable" data-tags="kubernetes cloud platform"><div class="nodes"><span>Kubernetes</span><span>Docker</span><span>Helm</span><span>OpenShift</span><span>Istio</span><span>ArgoCD</span></div></article>
-   <article class="pin short searchable" data-tags="automation devops gitops"><div class="pin-body"><div class="meta">DECLARATIVE OPERATIONS</div><h3>GitOps over click ops.</h3><p>Terraform, Terragrunt, Ansible for infrastructure as code.</p></div></article>
-   <article class="pin dark mid searchable" data-tags="cloud aws azure gcp"><div class="pin-body"><div class="meta">MULTI-CLOUD</div><h3>Cloud is a destination. Architecture is the constant.</h3><p>AWS, GCP, Azure with unified deployment strategies.</p></div></article>
-   <article class="pin short searchable" data-tags="cloud hybrid"><div class="pin-body"><div class="meta">HYBRID ARCHITECTURE</div><h3>On-prem and cloud together.</h3><p>Seamless integration across infrastructure layers.</p></div></article>
-   <article class="pin mid searchable" data-tags="sre observability monitoring"><div class="pin-body"><div class="meta">OBSERVABILITY</div><h3>Design for day two.</h3><p>Prometheus, Grafana, DataDog, ELK stack and SLOs/SLIs.</p></div></article>
-   <article class="pin mid searchable" data-tags="automation python go bash"><div class="pin-body"><div class="meta">AUTOMATION</div><h3>Automate the repeatable.</h3><p>Python, Go, Bash and Power Automate for workflow excellence.</p></div></article>
-   <article class="pin dark mid searchable" data-tags="architecture workshop poc"><div class="pin-body"><div class="meta">ARCHITECTURE</div><h3>Understand it.<br>Test it.<br>Operate it.</h3><p>Workshops, PoCs and solution design for real-world needs.</p></div></article>
-   <article class="pin mid dark searchable" data-tags="devops ci/cd pipeline"><div class="nodes" style="min-height:0;padding:20px 20px 8px"><span>Jenkins</span><span>GitHub Actions</span><span>ArgoCD</span><span>Tekton</span><span>CI/CD</span></div></article>
-   <article class="pin red short searchable" data-tags="open source philosophy"><div class="pin-body"><div class="meta">WHY OPEN?</div><h3>Knowledge shared is power multiplied.</h3></div></article>
+  <div class="wrap">
+    <div class="section-title">
+      <h2>What I build</h2>
+      <p>Platform thinking, automation, cloud strategy, and operational discipline shaped around reliability, speed, and sustainable delivery.</p>
+    </div>
+    <div class="masonry">
+      <article class="pin large red searchable" data-tags="ai automation cloud"><div class="hero-pin"><div class="meta">AI-ACCELERATED</div><div class="giant">GITHUB<br>COPILOT</div><p>Operational automation and faster delivery using AI-assisted engineering and smart RCA workflows.</p></div></article>
+      <article class="pin searchable" data-tags="kubernetes cloud platform"><div class="nodes"><span>Kubernetes</span><span>Docker</span><span>Helm</span><span>OpenShift</span><span>Istio</span><span>ArgoCD</span></div></article>
+      <article class="pin short searchable" data-tags="automation devops terraform"><div class="pin-body"><div class="meta">INFRASTRUCTURE AS CODE</div><h3>Build once, scale consistently.</h3><p>Terraform, Terragrunt, Ansible and reusable modules for enterprise-grade delivery.</p></div></article>
+      <article class="pin dark mid searchable" data-tags="cloud aws azure gcp"><div class="pin-body"><div class="meta">MULTI-CLOUD</div><h3>Architecture with flexibility.</h3><p>Designing secure, scalable workloads across AWS, Azure, GCP, Oracle and hybrid estates.</p></div></article>
+      <article class="pin short searchable" data-tags="automation workflow power automate"><div class="pin-body"><div class="meta">OPERATIONS</div><h3>Automate the routine.</h3><p>Power Automate and workflow orchestration to reduce effort and improve team velocity.</p></div></article>
+      <article class="pin mid searchable" data-tags="sre monitoring observality"><div class="pin-body"><div class="meta">OBSERVABILITY</div><h3>Reliable systems start with visibility.</h3><p>Monitoring, alerting, dashboards, log analytics and reliability-focused engineering practices.</p></div></article>
+      <article class="pin mid searchable" data-tags="automation scripts python"><div class="pin-body"><div class="meta">AUTOMATION</div><h3>Fewer manual steps. Better outcomes.</h3><p>Python, Bash, scripting and integrations that shorten cycles and increase confidence.</p></div></article>
+      <article class="pin dark mid searchable" data-tags="architecture workshop poc"><div class="pin-body"><div class="meta">STRATEGY</div><h3>Translate vision into implementation.</h3><p>Roadmaps, PoCs, technical workshops and architecture guidance for modernization.</p></div></article>
+      <article class="pin mid dark searchable" data-tags="devops delivery pipeline"><div class="nodes" style="min-height:0;padding:20px 20px 8px"><span>Jenkins</span><span>GitHub</span><span>CI/CD</span><span>ArgoCD</span><span>GitOps</span></div></article>
+      <article class="pin red short searchable" data-tags="mission purpose leadership"><div class="pin-body"><div class="meta">MISSION</div><h3>Enable sustainable digital transformation.</h3></div></article>
+    </div>
   </div>
- </div>
 </section>
 
 <section class="features">
- <div class="wrap">
-  <div class="feature">
-   <div class="copy"><div class="kicker">Platform Engineering</div><h2>Build platforms, not collections of products.</h2><p>I architect scalable infrastructure platforms that empower teams. From compute and networking to security and lifecycle management, every layer is designed for operational excellence and future growth.</p></div>
-   <div class="board">
-     <div class="mini" style="background:#dce7ff"><div class="mini-front"><b>Kubernetes</b><span>Orchestration</span></div><div class="mini-back" style="color:#2563eb">K8s</div></div>
-     <div class="mini" style="background:#f3e5d0"><div class="mini-front"><b>AWS</b><span>Public cloud</span></div><div class="mini-back" style="color:#c2410c">AWS</div></div>
-     <div class="mini" style="background:#dcebdc"><div class="mini-front"><b>Terraform</b><span>IaC engine</span></div><div class="mini-back" style="color:#15803d">TF</div></div>
-     <div class="mini" style="background:#ece3f4"><div class="mini-front"><b>OpenShift</b><span>Hybrid platform</span></div><div class="mini-back" style="color:#7c3aed">OS</div></div>
-   </div>
+  <div class="wrap">
+    <div class="feature">
+      <div class="copy">
+        <div class="kicker">Platform engineering</div>
+        <h2>Design systems that are ready for scale.</h2>
+        <p>I work across cloud platforms, security boundaries, deployment automation, and team operations to create infrastructure that is resilient, cost-aware, and resilient under pressure. The goal is not just provisioning—it's long-term operational confidence.</p>
+      </div>
+      <div class="board">
+        <div class="mini" style="background:#dfeaf9"><div class="mini-front"><b>Kubernetes</b><span>Container platform</span></div><div class="mini-back" style="color:#2563eb">K8s</div></div>
+        <div class="mini" style="background:#f5ead7"><div class="mini-front"><b>AWS</b><span>Cloud delivery</span></div><div class="mini-back" style="color:#c2410c">AWS</div></div>
+        <div class="mini" style="background:#dcf1e2"><div class="mini-front"><b>Terraform</b><span>IaC</span></div><div class="mini-back" style="color:#15803d">TF</div></div>
+        <div class="mini" style="background:#ece3f7"><div class="mini-front"><b>OpenShift</b><span>Enterprise platform</span></div><div class="mini-back" style="color:#7c3aed">OS</div></div>
+      </div>
+    </div>
+
+    <div class="feature">
+      <div class="copy">
+        <div class="kicker">Operational excellence</div>
+        <h2>Balance automation, observability, and human focus.</h2>
+        <p>Modern teams need systems that are observable, automatable, and maintainable. I combine DevOps workflows, monitoring strategy, and platform governance to reduce firefighting while speeding up delivery and improving visibility.</p>
+      </div>
+      <div class="board">
+        <div class="mini" style="background:#dfeaf9"><div class="mini-front"><b>Monitoring</b><span>Visibility</span></div><div class="mini-back" style="color:#2563eb">📊</div></div>
+        <div class="mini" style="background:#f5ead7"><div class="mini-front"><b>GitOps</b><span>Delivery model</span></div><div class="mini-back" style="color:#c2410c">🚀</div></div>
+        <div class="mini" style="background:#dcf1e2"><div class="mini-front"><b>AI RCA</b><span>Smart operations</span></div><div class="mini-back" style="color:#15803d">AI</div></div>
+        <div class="mini" style="background:#ece3f7"><div class="mini-front"><b>Reliability</b><span>SRE mindset</span></div><div class="mini-back" style="color:#7c3aed">◎</div></div>
+      </div>
+    </div>
   </div>
-  <div class="feature">
-   <div class="copy"><div class="kicker">Cloud-Native Operations</div><h2>Modernize without throwing away what works.</h2><p>Cloud native doesn't require pretending virtual machines disappeared. I work across containers and VMs, blending modern practices with proven infrastructure patterns for seamless digital transformation.</p></div>
-   <div class="board">
-     <div class="mini" style="background:#dce7ff"><div class="mini-front"><b>Docker</b><span>Containerization</span></div><div class="mini-back" style="color:#2563eb">🐳</div></div>
-     <div class="mini" style="background:#f3e5d0"><div class="mini-front"><b>Helm</b><span>K8s packaging</span></div><div class="mini-back" style="color:#c2410c">⛵</div></div>
-     <div class="mini" style="background:#dcebdc"><div class="mini-front"><b>GitOps</b><span>Declarative ops</span></div><div class="mini-back" style="color:#15803d">📦</div></div>
-     <div class="mini" style="background:#ece3f4"><div class="mini-front"><b>Monitoring</b><span>SRE tools</span></div><div class="mini-back" style="color:#7c3aed">📊</div></div>
-   </div>
-  </div>
- </div>
 </section>
 
 <section class="section" id="journey">
- <div class="wrap">
-  <div class="section-title"><h2>My DevOps journey</h2><p>21+ years of engineering excellence. The technologies evolved. The passion for building reliable, scalable infrastructure stayed constant.</p></div>
-  <div class="timeline">
-   <article class="job"><div class="period">APR 2025 → PRESENT</div><div class="company">Megh Infotech</div><h3>DevOps Specialist & Founder</h3><p>AI-accelerated infrastructure automation, GitHub Copilot integration for code generation, and advanced RCA with ML-powered insights.</p><div class="tags"><span>AI</span><span>Automation</span><span>Leadership</span></div></article>
-   <article class="job"><div class="period">JAN 2023 → APR 2024</div><div class="company">Srijan Technologies</div><h3>DevOps Specialist</h3><p>Kubernetes deployments, CI/CD pipeline optimization, cloud infrastructure provisioning, and observability stack implementation.</p><div class="tags"><span>Kubernetes</span><span>CI/CD</span><span>Cloud</span></div></article>
-   <article class="job"><div class="period">AUG 2018 → DEC 2022</div><div class="company">TwoPi-Radian Infotech</div><h3>DevOps Lead</h3><p>Architecture design, team leadership, infrastructure automation, disaster recovery planning, and enterprise cloud migrations.</p><div class="tags"><span>Leadership</span><span>Architecture</span><span>Migration</span></div></article>
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Career path</h2>
+      <p>A long arc across cloud architecture, platform engineering, DevOps leadership, and transformation work, with a consistent focus on scaling systems and teams.</p>
+    </div>
+    <div class="timeline">
+      <article class="job">
+        <div class="period">APR 2025 → PRESENT</div>
+        <div class="company">Megh Infotech</div>
+        <h3>DevOps Specialist</h3>
+        <p>Driving AI-augmented infrastructure automation, modernization programs and reusable platform practices for scalable execution.</p>
+        <div class="tags"><span>AI Ops</span><span>Cloud</span><span>Automation</span></div>
+      </article>
+      <article class="job">
+        <div class="period">APR 2024 → MAR 2025</div>
+        <div class="company">Megh Consulting</div>
+        <h3>DevOps Specialist</h3>
+        <p>Focused on delivery automation, observability, release acceleration and service reliability across cloud-native workloads.</p>
+        <div class="tags"><span>DevOps</span><span>SRE</span><span>CI/CD</span></div>
+      </article>
+      <article class="job">
+        <div class="period">JAN 2023 → APR 2024</div>
+        <div class="company">Srijan Technologies</div>
+        <h3>DevOps Specialist</h3>
+        <p>Built infrastructure pipelines, cloud environment automation, and DevOps enablement for faster and safer deployment.</p>
+        <div class="tags"><span>Infrastructure</span><span>Platform</span><span>Delivery</span></div>
+      </article>
+    </div>
   </div>
- </div>
 </section>
 
 <section class="section certs" id="credentials">
- <div class="wrap">
-  <div class="section-title"><h2>Credentials & Expertise</h2><p>Certifications and technical skills supporting enterprise cloud and DevOps infrastructure.</p></div>
-  <div class="cert-grid">
-   <div class="cert"><div class="badge">AWS</div><div><b>AWS Certified Cloud Practitioner</b><span>Amazon Web Services</span></div></div>
-   <div class="cert"><div class="badge">AZ</div><div><b>Azure Fundamentals</b><span>Microsoft Certified</span></div></div>
-   <div class="cert"><div class="badge">GCP</div><div><b>Google Cloud Associate</b><span>Google Cloud Platform</span></div></div>
-   <div class="cert"><div class="badge">K8s</div><div><b>Kubernetes Operations</b><span>CNCF Certified</span></div></div>
+  <div class="wrap">
+    <div class="section-title">
+      <h2>Credentials</h2>
+      <p>Cloud, automation, and platform expertise supported by certifications and hands-on implementation experience.</p>
+    </div>
+    <div class="cert-grid">
+      <div class="cert"><div class="badge">AWS</div><div><b>Cloud Practitioner</b><span>Amazon Web Services</span></div></div>
+      <div class="cert"><div class="badge">AZ</div><div><b>Azure Fundamentals</b><span>Microsoft</span></div></div>
+      <div class="cert"><div class="badge">GCP</div><div><b>Google Cloud</b><span>Cloud Platform</span></div></div>
+      <div class="cert"><div class="badge">K8s</div><div><b>Kubernetes & Containers</b><span>Platform engineering</span></div></div>
+    </div>
   </div>
- </div>
 </section>
 
-<section class="cta"><div class="wrap cta-in"><div><h2>Want to discuss cloud infrastructure & DevOps?</h2><p>Kubernetes, Cloud Architecture, Infrastructure Automation, SRE practices, or AI-powered DevOps.</p></div><a class="btn primary" href="mailto:dev.saibal@gmail.com">Get in touch</a></div></section>
+<section class="cta">
+  <div class="wrap cta-in">
+    <div>
+      <h2>Let’s build the next layer of reliable operations.</h2>
+      <p>Cloud modernization, DevOps transformation, SRE enablement, AI-assisted engineering and infrastructure strategy.</p>
+    </div>
+    <a class="btn primary" href="mailto:dev.saibal@gmail.com">Get in touch</a>
+  </div>
+</section>
 </main>
 
-<footer><div class="wrap footer"><div class="logo"><span class="logo-mark">SD</span>Saibal Dey</div><div class="footer-links"><a href="mailto:dev.saibal@gmail.com">Email</a><a href="https://github.com/saibaldey">GitHub</a><a href="https://linkedin.com/in/saibal-dey">LinkedIn</a><a href="https://meghinfotech.com">Company</a></div></div></footer>
+<footer>
+  <div class="wrap footer">
+    <div class="logo"><span class="logo-mark">SD</span>Saibal Dey</div>
+    <div class="footer-links">
+      <a href="mailto:dev.saibal@gmail.com">Email</a>
+      <a href="https://github.com/saibaldey">GitHub</a>
+      <a href="https://meghinfotech.com">Megh Infotech</a>
+    </div>
+  </div>
+</footer>
 
 <script>
 function toggleTheme(){
@@ -282,20 +302,20 @@ function toggleTheme(){
 const pins=[...document.querySelectorAll('.searchable')];
 const chips=[...document.querySelectorAll('[data-filter]')];
 function filterPins(q){
- q=(q||'').toLowerCase().trim();
- pins.forEach(p=>{
-  const hay=(p.textContent+' '+(p.dataset.tags||'')).toLowerCase();
-  p.style.display=(!q||q==='all'||hay.includes(q))?'inline-block':'none';
- });
+  q=(q||'').toLowerCase().trim();
+  pins.forEach(p=>{
+    const hay=(p.textContent+' '+(p.dataset.tags||'')).toLowerCase();
+    p.style.display=(!q||q==='all'||hay.includes(q))?'inline-block':'none';
+  });
 }
 chips.forEach(c=>c.addEventListener('click',()=>{
- chips.forEach(x=>x.classList.remove('active'));
- c.classList.add('active');
- filterPins(c.dataset.filter);
+  chips.forEach(x=>x.classList.remove('active'));
+  c.classList.add('active');
+  filterPins(c.dataset.filter);
 }));
 document.getElementById('search').addEventListener('input',e=>{
- chips.forEach(x=>x.classList.remove('active'));
- filterPins(e.target.value);
+  chips.forEach(x=>x.classList.remove('active'));
+  filterPins(e.target.value);
 });
 </script>
 </body>
