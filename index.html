@@ -1,10 +1,479 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
-    <title>My Personal Website</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saibal Dey - DevOps Specialist & Cloud Architect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        .header {
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            text-align: center;
+        }
+
+        .header h1 {
+            color: #667eea;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .header .title {
+            color: #764ba2;
+            font-size: 1.3em;
+            margin-bottom: 20px;
+            font-weight: 500;
+        }
+
+        .header .summary {
+            font-size: 1.05em;
+            color: #555;
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        .social-links {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .social-links a {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #667eea;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background 0.3s;
+            font-size: 0.9em;
+        }
+
+        .social-links a:hover {
+            background: #764ba2;
+        }
+
+        .mission-vision {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+
+        .mission-vision div {
+            background: white;
+            padding: 25px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+
+        .mission-vision h3 {
+            color: #667eea;
+            margin-bottom: 10px;
+            font-size: 1.3em;
+        }
+
+        .mission-vision p {
+            color: #555;
+            line-height: 1.7;
+        }
+
+        section {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+
+        section h2 {
+            color: #667eea;
+            font-size: 1.8em;
+            margin-bottom: 25px;
+            padding-bottom: 10px;
+            border-bottom: 3px solid #764ba2;
+        }
+
+        .roles-list {
+            list-style: none;
+        }
+
+        .roles-list li {
+            padding: 12px 0;
+            padding-left: 25px;
+            position: relative;
+            color: #555;
+            line-height: 1.6;
+        }
+
+        .roles-list li:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: #667eea;
+            font-weight: bold;
+            font-size: 1.2em;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+
+        table th {
+            background: #667eea;
+            color: white;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+        }
+
+        table td {
+            padding: 12px;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        table tr:hover {
+            background: #f5f5f5;
+        }
+
+        .grid-2 {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+        }
+
+        .expertise-card {
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .expertise-card h4 {
+            color: #667eea;
+            margin-bottom: 8px;
+            font-size: 1.1em;
+        }
+
+        .expertise-card p {
+            color: #666;
+            font-size: 0.95em;
+            line-height: 1.6;
+        }
+
+        .education-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .education-item {
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 4px solid #764ba2;
+            border-radius: 5px;
+        }
+
+        .education-item h4 {
+            color: #764ba2;
+            margin-bottom: 5px;
+        }
+
+        .education-item .details {
+            color: #666;
+            font-size: 0.9em;
+        }
+
+        footer {
+            text-align: center;
+            color: white;
+            padding: 20px;
+            margin-top: 40px;
+        }
+
+        footer p {
+            font-size: 0.95em;
+        }
+
+        @media (max-width: 768px) {
+            .mission-vision {
+                grid-template-columns: 1fr;
+            }
+
+            .grid-2 {
+                grid-template-columns: 1fr;
+            }
+
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header .title {
+                font-size: 1.1em;
+            }
+
+            table {
+                font-size: 0.9em;
+            }
+
+            table th, table td {
+                padding: 8px;
+            }
+        }
+    </style>
 </head>
 <body>
-    <h1>Welcome to My Website!</h1>
-    <p>Hi, I'm using GitHub Pages to host my personal profile.</p>
+    <div class="container">
+        <div class="header">
+            <h1>Saibal Dey</h1>
+            <div class="title">DevOps Specialist | Cloud Architect | AI-Driven Infrastructure Expert</div>
+            <p class="summary">
+                21+ years of professional experience in AI-Driven Cloud, DevOps, and SRE roles, including working as a Consultant, Architect, TechLead, and Software Developer.
+            </p>
+            <div class="social-links">
+                <a href="https://github.com/saibaldey" target="_blank">GitHub Profile</a>
+                <a href="https://github.com/infotechmegh" target="_blank">Megh GitHub</a>
+                <a href="https://cloudguy20.medium.com/" target="_blank">Medium Blog</a>
+                <a href="https://meghinfotech.com/" target="_blank">Company Website</a>
+            </div>
+        </div>
+
+        <div class="mission-vision">
+            <div>
+                <h3>🎯 Mission</h3>
+                <p>To enable organizations to embrace the power of cloud, automation, and AI for sustainable growth and competitive advantage.</p>
+            </div>
+            <div>
+                <h3>🌟 Vision</h3>
+                <p>To be a leading technology enabler driving digital transformation with intelligence and automation.</p>
+            </div>
+        </div>
+
+        <section>
+            <h2>Roles & Responsibilities</h2>
+            <ul class="roles-list">
+                <li><strong>GitHub Copilot:</strong> AI Accelerated infrastructure automation and coding.</li>
+                <li><strong>CoPilot integrated smart RCA:</strong> AI-assisted RCA recommendations leveraging MS Copilot, Gemini, and AWS CloudWatch Investigation.</li>
+                <li><strong>Operational efficiency boosting:</strong> Automated multiple routine tasks using MS Teams and Power Automate.</li>
+                <li><strong>Reusable IaC Modules:</strong> Developed Terraform and Terragrunt modules for scalable infrastructure provisioning on cloud platforms.</li>
+                <li><strong>Smart Monitoring:</strong> Built intelligent monitoring systems for proactive issue detection and resolution.</li>
+                <li><strong>Knowledge Sharing:</strong> Created documentation and Knowledge Transfer (KT) videos to support onboarding and foster learning.</li>
+                <li><strong>PoCs & Innovation:</strong> Delivered Proof of Concepts (PoCs) using emerging tools to enhance DevOps/SRE practices.</li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Reusability Contributions</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Area</th>
+                        <th>Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Github Agentic AI</strong></td>
+                        <td>Integrated ADO, Jira, Github, Jenkins, DataDog, Confluence, Cloud Platform to automate the entire SDLC</td>
+                    </tr>
+                    <tr>
+                        <td><strong>MS Power Automate Workflow</strong></td>
+                        <td>Automated the Jira workflows using MS Teams & Power Automate</td>
+                    </tr>
+                    <tr>
+                        <td><strong>AI Accelerated Co-Pilot</strong></td>
+                        <td>Integrated Jira, Github & VS Code for automated code generation</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Terraform Module</strong></td>
+                        <td>Created Terraform modules for Infrastructure as Code (IaC) provisioning in AWS</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Core Expertise & Service Areas</h2>
+            <div class="grid-2">
+                <div class="expertise-card">
+                    <h4>☁️ Public Cloud</h4>
+                    <p>AWS, GCP, Azure, Oracle – Strategy, Security, Optimization</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🔐 Private Cloud</h4>
+                    <p>OpenStack, OpenShift – Hybrid, Secure K8s</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>📦 Migration & Modernization</h4>
+                    <p>Docker, Kubernetes, OpenShift – Lift & Shift, Refactor</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🚀 Cloud-Native</h4>
+                    <p>K8s, Docker, Istio – Scalable, Resilient Apps</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🏗️ Infrastructure as Code</h4>
+                    <p>Terragrunt, Terraform, Ansible, CloudFormation, Chef</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>⚙️ DevOps & SRE</h4>
+                    <p>CI/CD, Blue-Green, SLIs/SLOs</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🤖 Automation</h4>
+                    <p>Serverless, Workflow Integration, SDLC</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>📊 Observability</h4>
+                    <p>Splunk, ELK, Prometheus, Instana, DataDog</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🧠 AI & Smart Ops</h4>
+                    <p>Copilot, Predictive Scaling, Smart Alerts, OCI AI</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Employment History</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Organization</th>
+                        <th>Role</th>
+                        <th>Duration</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Megh Infotech Pvt Ltd</td>
+                        <td>DevOps Specialist</td>
+                        <td>April 2025 - Present</td>
+                    </tr>
+                    <tr>
+                        <td>Megh Consulting</td>
+                        <td>DevOps Specialist</td>
+                        <td>April 2024 - March 2025</td>
+                    </tr>
+                    <tr>
+                        <td>Srijan Technologies</td>
+                        <td>DevOps Specialist</td>
+                        <td>January 2023 - April 2024</td>
+                    </tr>
+                    <tr>
+                        <td>TwoPi-Radian Infotech</td>
+                        <td>DevOps Lead</td>
+                        <td>August 2018 - December 2022</td>
+                    </tr>
+                    <tr>
+                        <td>Seamless Distribution System AB</td>
+                        <td>DevOps Lead</td>
+                        <td>July 2016 - August 2018</td>
+                    </tr>
+                    <tr>
+                        <td>TATA Consultancy Services</td>
+                        <td>DevOps Lead</td>
+                        <td>March 2011 - July 2016</td>
+                    </tr>
+                    <tr>
+                        <td>Aricent Technologies</td>
+                        <td>Sr. Engineer Software</td>
+                        <td>July 2010 - February 2011</td>
+                    </tr>
+                    <tr>
+                        <td>Sasken Communication Technologies Ltd.</td>
+                        <td>Sr. Engineer Software</td>
+                        <td>July 2005 - July 2010</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section>
+            <h2>Educational Qualifications</h2>
+            <div class="education-grid">
+                <div class="education-item">
+                    <h4>Post Graduate Certification in Business Management</h4>
+                    <div class="details">
+                        <strong>Major:</strong> Marketing | <strong>Institute:</strong> IIT Bombay | <strong>Year:</strong> 2011-12
+                    </div>
+                </div>
+                <div class="education-item">
+                    <h4>BTech Information Technology</h4>
+                    <div class="details">
+                        <strong>Institute:</strong> Institute of Engineering & Management | <strong>Year:</strong> 2001-2005
+                    </div>
+                </div>
+                <div class="education-item">
+                    <h4>10+2 Science</h4>
+                    <div class="details">
+                        <strong>Board:</strong> WBCHSE | <strong>Year:</strong> 1999-2001
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h2>Open Source Contributions</h2>
+            <ul class="roles-list">
+                <li><a href="https://github.com/saibaldey" target="_blank">GitHub Profile - saibaldey</a></li>
+                <li><a href="https://github.com/infotechmegh" target="_blank">GitHub Organization - infotechmegh</a></li>
+                <li><a href="https://github.com/kubernetes/kubernetes/issues/73906#issuecomment-565964455" target="_blank">Kubernetes Contribution</a></li>
+                <li><a href="https://ask.openstack.org/en/users/25551/saibal-dey/" target="_blank">OpenStack Community</a></li>
+                <li><a href="https://cloudguy20.medium.com/" target="_blank">Medium - Technology Articles</a></li>
+            </ul>
+        </section>
+
+        <section>
+            <h2>Personal</h2>
+            <div class="grid-2">
+                <div class="expertise-card">
+                    <h4>💼 Founder</h4>
+                    <p><a href="https://meghinfotech.com/" target="_blank" style="color: #667eea;">Megh Infotech</a></p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🧘 Philosophy</h4>
+                    <p>Believes in Simple Living</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🌿 Interests</h4>
+                    <p>Gardening, Cooking, Trekking, and reading wildlife & sustainability news</p>
+                </div>
+                <div class="expertise-card">
+                    <h4>🌟 Role Model</h4>
+                    <p>Jon Jandai - my hero</p>
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <p>&copy; 2025 Saibal Dey. All rights reserved. | Powered by GitHub Pages</p>
+            <p>Let's connect and build amazing things together! 🚀</p>
+        </footer>
+    </div>
 </body>
 </html>
