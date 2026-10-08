@@ -25,7 +25,7 @@ body.dark{
 html{scroll-behavior:smooth}
 body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,-apple-system,"Segoe UI",sans-serif;transition:background .2s,color .2s}
 a{color:inherit;text-decoration:none}.wrap{width:min(1280px,calc(100% - 48px));margin:auto}
-.theme-btn{min-height:40px;border:1px solid var(--hair);border-radius:var(--pill);padding:0 14px;font:700 13px Inter;display:inline-flex;align-items:center;gap:6px;cursor:pointer;background:var(--card);color:var(--ink);transition:background .15s,border-color .15s}
+.theme-btn{min-height:40px;border:1px solid var(--hair);border-radius:var(--pill);padding:0 14px;font:700 13px Inter;display:inline-flex;align-items:center;gap:6px;cursor:pointer;background:var(--card);color:var(--ink)}
 .theme-btn:hover{border-color:var(--ink)}
 .nav-shell{position:sticky;top:0;z-index:60;background:var(--nav-bg);border-bottom:1px solid var(--hair)}
 .nav{height:64px;display:grid;grid-template-columns:auto minmax(260px,560px) auto;gap:20px;align-items:center}
@@ -76,7 +76,7 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 .copy p{line-height:1.6;color:var(--body)}
 .board{background:var(--card);border-radius:var(--rl);padding:8px;display:grid;grid-template-columns:1fr 1fr;gap:8px}
 .mini{border-radius:var(--r);height:235px;perspective:800px;cursor:default;position:relative}
-.mini-front,.mini-back{position:absolute;inset:0;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;backface-visibility:hidden;-webkit-backface-visibility:hidden;transition:transform .45s ease;overflow:hidden}
+.mini-front,.mini-back{position:absolute;inset:0;border-radius:var(--r);display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:20px;backface-visibility:hidden;transition:transform .7s ease}
 .mini-front{transform:rotateY(0deg)}
 .mini-back{transform:rotateY(180deg);font-size:4rem;line-height:1}
 .mini:hover .mini-front{transform:rotateY(-180deg)}
@@ -84,9 +84,9 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 .mini:hover{box-shadow:0 10px 30px rgba(0,0,0,.12);z-index:2}
 .mini b{font:700 20px/1.15 Manrope;color:var(--ink)}
 .mini span{font-size:12px;color:var(--mute);margin-top:6px}
-.timeline-wrap{position:relative;padding:0 40px}
-.carousel-nav{display:flex;justify-content:center;gap:16px;margin-top:32px}
-.carousel-btn{width:44px;height:44px;border:1px solid var(--hair);border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;font-weight:700;transition:all .2s}
+.timeline-wrap{position:relative;padding:0 20px}
+.carousel-nav{display:flex;justify-content:center;gap:16px;margin-top:22px}
+.carousel-btn{width:44px;height:44px;border:1px solid var(--hair);border-radius:50%;background:var(--card);color:var(--ink);cursor:pointer;display:flex;align-items:center;justify-content:center;font-size:18px;transition:all .2s ease}
 .carousel-btn:hover{background:var(--red);border-color:var(--red);color:#0c1620}
 .carousel-btn:disabled{opacity:0.5;cursor:not-allowed}
 .timeline{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;scroll-behavior:smooth}
@@ -112,6 +112,25 @@ h1{font:600 clamp(42px,6vw,70px)/1.08 Manrope,Inter,sans-serif;letter-spacing:-1
 footer{padding:32px 0;color:var(--mute);font-size:14px}
 .footer{display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap}
 .footer-links a{text-decoration:none;margin-left:16px}
+
+.executive-journey{background:var(--soft)}
+.career-graph{position:relative;margin-top:18px;padding:8px 0 18px;overflow-x:auto;scrollbar-width:thin}
+.career-track{display:flex;gap:18px;min-width:1100px;align-items:stretch;padding-bottom:6px}
+.career-node{position:relative;flex:1 1 220px;min-width:220px;background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.02));border:1px solid var(--hair);border-radius:18px;padding:22px 18px;display:flex;flex-direction:column;justify-content:flex-start;min-height:260px;box-shadow:0 18px 30px rgba(0,0,0,.05)}
+.career-node::before{content:"";position:absolute;left:18px;top:-10px;width:16px;height:16px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(242,209,18,.12)}
+.career-node::after{content:"";position:absolute;left:26px;top:6px;width:calc(100% - 52px);height:2px;background:linear-gradient(90deg, rgba(242,209,18,.9), rgba(242,209,18,0));opacity:.5}
+.career-node.consultant{background:linear-gradient(135deg, rgba(242,209,18,.22), rgba(255,255,255,.04));border-color:rgba(242,209,18,.45)}
+.node-year{font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--gold);font-weight:800;margin-top:4px}
+.node-company{margin-top:16px;font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--muted);font-weight:700}
+.career-node h3{margin:12px 0 10px;font:700 24px/1.2 Manrope;letter-spacing:-.06em}
+.career-node p{margin:0;color:var(--body);line-height:1.6;font-size:14px}
+.career-node .tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:6px;padding-top:14px}
+.career-node .tags span{background:rgba(242,209,18,.12);border:1px solid rgba(242,209,18,.2);padding:7px 9px;border-radius:999px;color:var(--ink);font-size:10px;letter-spacing:.06em;text-transform:uppercase;font-weight:700}
+.career-summary{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:26px}
+.summary-box{background:var(--card);border:1px solid var(--hair);border-radius:18px;padding:20px 18px}
+.summary-box .label{color:var(--mute);font-size:11px;letter-spacing:.12em;text-transform:uppercase;font-weight:800}
+.summary-box strong{display:block;margin-top:10px;font-size:clamp(1.4rem,2vw,2.2rem);line-height:1.2;letter-spacing:-.05em}
+
 @media(max-width:1024px){
   .masonry{columns:3}
   .timeline{grid-template-columns:repeat(2,1fr)}
@@ -127,6 +146,7 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
   .timeline-wrap{padding:0}
   .cta-in{flex-direction:column;align-items:flex-start}
   .giant{font-size:52px}
+  .career-summary{grid-template-columns:1fr}
 }
 @media(max-width:480px){
   .wrap{width:calc(100% - 24px)}.hero,.section,.features{padding:32px 0}
@@ -156,7 +176,7 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
   <div class="wrap hero-inner">
     <div class="kicker">Cloud • DevOps • SRE • AI</div>
     <h1>Designing resilient systems<br>for real-world growth</h1>
-    <p>I help organizations modernize infrastructure, automate delivery, improve reliability, and turn operational complexity into scalable clarity. With 21+ years across consulting, architecture, engineering, and leadership roles, I build systems that support business growth rather than slow it down.</p>
+    <p>I help organizations modernize infrastructure, automate delivery, improve reliability, and turn operational complexity into scalable clarity. With 21+ years across consulting, architecture, build-out and operations leadership, I bring a practical, business-aligned approach to platform transformation.</p>
     <div class="hero-actions">
       <a class="btn primary" href="#discover">Explore my work</a>
       <a class="btn secondary" href="#journey">My journey</a>
@@ -178,15 +198,15 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
       <p>Platform thinking, automation, cloud strategy, and operational discipline shaped around reliability, speed, and sustainable delivery.</p>
     </div>
     <div class="masonry">
-      <article class="pin large red searchable" data-tags="ai automation cloud"><div class="hero-pin"><div class="meta">AI-ACCELERATED</div><div class="giant">GITHUB<br>COPILOT</div><p>Operational automation and faster delivery using AI-assisted engineering and smart RCA workflows.</p></div></article>
+      <article class="pin large red searchable" data-tags="ai automation cloud"><div class="hero-pin"><div class="meta">AI-ACCELERATED</div><div class="giant">GITHUB<br>COPILOT</div><p>Operational intelligence powered by automation, AI-assisted troubleshooting, and smarter execution models.</p></div></article>
       <article class="pin searchable" data-tags="kubernetes cloud platform"><div class="nodes"><span>Kubernetes</span><span>Docker</span><span>Helm</span><span>OpenShift</span><span>Istio</span><span>ArgoCD</span></div></article>
-      <article class="pin short searchable" data-tags="automation devops terraform"><div class="pin-body"><div class="meta">INFRASTRUCTURE AS CODE</div><h3>Build once, scale consistently.</h3><p>Terraform, Terragrunt, Ansible and reusable modules for enterprise-grade delivery.</p></div></article>
-      <article class="pin dark mid searchable" data-tags="cloud aws azure gcp"><div class="pin-body"><div class="meta">MULTI-CLOUD</div><h3>Architecture with flexibility.</h3><p>Designing secure, scalable workloads across AWS, Azure, GCP, Oracle and hybrid estates.</p></div></article>
-      <article class="pin short searchable" data-tags="automation workflow power automate"><div class="pin-body"><div class="meta">OPERATIONS</div><h3>Automate the routine.</h3><p>Power Automate and workflow orchestration to reduce effort and improve team velocity.</p></div></article>
-      <article class="pin mid searchable" data-tags="sre monitoring observality"><div class="pin-body"><div class="meta">OBSERVABILITY</div><h3>Reliable systems start with visibility.</h3><p>Monitoring, alerting, dashboards, log analytics and reliability-focused engineering practices.</p></div></article>
-      <article class="pin mid searchable" data-tags="automation scripts python"><div class="pin-body"><div class="meta">AUTOMATION</div><h3>Fewer manual steps. Better outcomes.</h3><p>Python, Bash, scripting and integrations that shorten cycles and increase confidence.</p></div></article>
-      <article class="pin dark mid searchable" data-tags="architecture workshop poc"><div class="pin-body"><div class="meta">STRATEGY</div><h3>Translate vision into implementation.</h3><p>Roadmaps, PoCs, technical workshops and architecture guidance for modernization.</p></div></article>
-      <article class="pin mid dark searchable" data-tags="devops delivery pipeline"><div class="nodes" style="min-height:0;padding:20px 20px 8px"><span>Jenkins</span><span>GitHub</span><span>CI/CD</span><span>ArgoCD</span><span>GitOps</span></div></article>
+      <article class="pin short searchable" data-tags="automation devops terraform"><div class="pin-body"><div class="meta">INFRASTRUCTURE AS CODE</div><h3>Build once, scale consistently.</h3><p>Reusable templates, standardization, and repeatable infrastructure patterns for enterprise cloud environments.</p></div></article>
+      <article class="pin dark mid searchable" data-tags="cloud aws azure gcp"><div class="pin-body"><div class="meta">MULTI-CLOUD</div><h3>Architecture with flexibility.</h3><p>Designing secure, resilient systems across AWS, Azure, and hybrid landscapes to support growth and continuity.</p></div></article>
+      <article class="pin short searchable" data-tags="automation workflow power automate"><div class="pin-body"><div class="meta">OPERATIONS</div><h3>Automate the routine.</h3><p>Power Automate, scripting, event-driven workflows, and operational intelligence built for scale.</p></div></article>
+      <article class="pin mid searchable" data-tags="sre monitoring observability"><div class="pin-body"><div class="meta">OBSERVABILITY</div><h3>Reliable systems start with visibility.</h3><p>Monitoring, alerting, service dependencies, and signal-driven operations to improve stability and confidence.</p></div></article>
+      <article class="pin mid searchable" data-tags="automation scripts python"><div class="pin-body"><div class="meta">AUTOMATION</div><h3>Fewer manual steps. Better outcomes.</h3><p>Python, Bash, integration pipelines, and infrastructure automation to reduce operational friction.</p></div></article>
+      <article class="pin dark mid searchable" data-tags="architecture workshop poc"><div class="pin-body"><div class="meta">STRATEGY</div><h3>Translate vision into implementation.</h3><p>Roadmaps, execution plans, and architecture decisions that connect business need to delivery reality.</p></div></article>
+      <article class="pin mid dark searchable" data-tags="devops delivery pipeline"><div class="nodes" style="min-height:0;padding:20px 20px 8px"><span>Jenkins</span><span>GitHub</span><span>CI/CD</span><span>GitOps</span><span>Docker</span></div></article>
       <article class="pin red short searchable" data-tags="mission purpose leadership"><div class="pin-body"><div class="meta">MISSION</div><h3>Enable sustainable digital transformation.</h3></div></article>
     </div>
   </div>
@@ -198,7 +218,7 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
       <div class="copy">
         <div class="kicker">Platform engineering</div>
         <h2>Design systems that are ready for scale.</h2>
-        <p>I work across cloud platforms, security boundaries, deployment automation, and team operations to create infrastructure that is resilient, cost-aware, and resilient under pressure. The goal is not just provisioning—it's long-term operational confidence.</p>
+        <p>I work across cloud platforms, security boundaries, deployment automation, and team operations to create infrastructure that is resilient, cost-aware, and operationally sustainable. The focus is not just on provisioning, but on enabling delivery velocity without sacrificing governance or reliability.</p>
       </div>
       <div class="board">
         <div class="mini" style="background:#dfeaf9"><div class="mini-front"><b>Kubernetes</b><span>Container platform</span></div><div class="mini-back" style="color:#2563eb">K8s</div></div>
@@ -212,7 +232,7 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
       <div class="copy">
         <div class="kicker">Operational excellence</div>
         <h2>Balance automation, observability, and human focus.</h2>
-        <p>Modern teams need systems that are observable, automatable, and maintainable. I combine DevOps workflows, monitoring strategy, and platform governance to reduce firefighting while speeding up delivery and improving visibility.</p>
+        <p>Modern teams need systems that are observable, automatable, and maintainable. I combine DevOps workflows, monitoring strategy, and platform governance to reduce firefighting while speeding up delivery and improving service quality.</p>
       </div>
       <div class="board">
         <div class="mini" style="background:#dfeaf9"><div class="mini-front"><b>Monitoring</b><span>Visibility</span></div><div class="mini-back" style="color:#2563eb">📊</div></div>
@@ -224,92 +244,106 @@ footer{padding:32px 0;color:var(--mute);font-size:14px}
   </div>
 </section>
 
-<section class="section" id="journey">
+<section class="section executive-journey" id="journey">
   <div class="wrap">
     <div class="section-title">
-      <h2>Employment Journey</h2>
-      <p>Career progression across Cloud, DevOps, SRE and platform leadership roles over 21+ years. Navigate through my professional experience.</p>
+      <h2>Career trajectory</h2>
+      <p>Technology leadership, platform modernization, and consultant-led delivery shaped across 21+ years in software, cloud, and DevOps transformation.</p>
     </div>
-    
-    <div class="timeline-wrap">
-      <div class="timeline" id="timelineContainer">
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">APR 2025 → PRESENT</div>
-            <div class="company">Megh Infotech Pvt Ltd</div>
-            <h3>DevOps Specialist</h3>
-            <p>AI-accelerated infrastructure automation, GitHub Copilot integration for code generation, and advanced RCA with ML-powered insights.</p>
-            <div class="tags"><span>AI</span><span>Cloud</span><span>Automation</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">APR 2024 → MAR 2025</div>
-            <div class="company">Megh Consulting</div>
-            <h3>DevOps Specialist</h3>
-            <p>Focused on delivery automation, observability, release acceleration and service reliability across cloud-native workloads.</p>
-            <div class="tags"><span>DevOps</span><span>SRE</span><span>CI/CD</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">JAN 2023 → APR 2024</div>
-            <div class="company">Srijan Technologies</div>
-            <h3>DevOps Specialist</h3>
-            <p>Built infrastructure pipelines, cloud environment automation, and DevOps enablement for faster and safer deployment.</p>
-            <div class="tags"><span>Infrastructure</span><span>Platform</span><span>Delivery</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">AUG 2018 → DEC 2022</div>
-            <div class="company">TwoPi-Radian Infotech</div>
-            <h3>DevOps Lead</h3>
-            <p>Architecture design, team leadership, infrastructure automation, disaster recovery planning, and enterprise cloud migrations.</p>
-            <div class="tags"><span>Leadership</span><span>Architecture</span><span>Migration</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">JUL 2016 → AUG 2018</div>
-            <div class="company">Seamless Distribution System AB</div>
-            <h3>DevOps Lead</h3>
-            <p>Managed infrastructure for telecom and distribution systems, implemented CI/CD pipelines and led DevOps transformation initiatives.</p>
-            <div class="tags"><span>Telecom</span><span>CI/CD</span><span>Leadership</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">MAR 2011 → JUL 2016</div>
-            <div class="company">TATA Consultancy Services</div>
-            <h3>DevOps Lead</h3>
-            <p>Enterprise infrastructure management, automation frameworks, and DevOps enablement for large-scale global projects.</p>
-            <div class="tags"><span>Enterprise</span><span>Automation</span><span>Global</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">JUL 2010 → FEB 2011</div>
-            <div class="company">Aricent Technologies</div>
-            <h3>Sr. Engineer Software</h3>
-            <p>Software engineering and infrastructure optimization for telecom and embedded systems.</p>
-            <div class="tags"><span>Telecom</span><span>Embedded</span><span>Engineering</span></div>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="job">
-            <div class="period">JUL 2005 → JUL 2010</div>
-            <div class="company">Sasken Communication Technologies Ltd.</div>
-            <h3>Sr. Engineer Software</h3>
-            <p>Core software engineering, protocol development, and infrastructure support for telecom systems and applications.</p>
-            <div class="tags"><span>Protocols</span><span>Telecom</span><span>Systems</span></div>
-          </div>
-        </div>
+
+    <div class="career-graph" aria-label="Career timeline graph">
+      <div class="career-track" id="careerTrack">
+        <article class="career-node">
+          <div class="node-year">2005–2010</div>
+          <div class="node-company">Sasken</div>
+          <h3>Sr. Engineer, Software</h3>
+          <p>Built the technical foundation in telecom systems, software engineering, and platform support for mission-critical environments.</p>
+          <div class="tags"><span>Telecom</span><span>Systems</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2010–2011</div>
+          <div class="node-company">Aricent</div>
+          <h3>Sr. Engineer, Software</h3>
+          <p>Expanded engineering scope and delivery ownership across higher-complexity telecom and embedded technology programs.</p>
+          <div class="tags"><span>Delivery</span><span>Engineering</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2011–2016</div>
+          <div class="node-company">TCS</div>
+          <h3>DevOps Lead</h3>
+          <p>Led enterprise infrastructure modernization, operational automation, and scalable delivery programs across global technology environments.</p>
+          <div class="tags"><span>Leadership</span><span>Automation</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2016–2018</div>
+          <div class="node-company">Seamless Distribution System AB</div>
+          <h3>DevOps Lead</h3>
+          <p>Drove DevOps transformation, release enablement, and reliability improvements, helping operational teams scale with greater confidence.</p>
+          <div class="tags"><span>CI/CD</span><span>Reliability</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2018–2022</div>
+          <div class="node-company">TwoPi-Radian Infotech</div>
+          <h3>DevOps Lead</h3>
+          <p>Owned architecture strategy, cloud migration, infrastructure automation, and team leadership for business-critical transformation programs.</p>
+          <div class="tags"><span>Architecture</span><span>Cloud</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2023–2024</div>
+          <div class="node-company">Srijan</div>
+          <h3>DevOps Specialist</h3>
+          <p>Focused on platform enablement, delivery automation, and scalable cloud operating models that improve deployment quality and speed.</p>
+          <div class="tags"><span>Platform</span><span>Delivery</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2024–2025</div>
+          <div class="node-company">Megh Consulting</div>
+          <h3>DevOps Specialist</h3>
+          <p>Delivered specialist capability across cloud modernization, release acceleration, service reliability, and automation-led operational improvement.</p>
+          <div class="tags"><span>SRE</span><span>Observability</span></div>
+        </article>
+
+        <article class="career-node">
+          <div class="node-year">2025–Present</div>
+          <div class="node-company">Megh Infotech Pvt Ltd</div>
+          <h3>DevOps Specialist</h3>
+          <p>Continued the evolution toward strategic execution, AI-assisted operations, and platform modernization focused on business value.</p>
+          <div class="tags"><span>AI Ops</span><span>Automation</span></div>
+        </article>
+
+        <article class="career-node consultant">
+          <div class="node-year">2026 onward</div>
+          <div class="node-company">Consulting</div>
+          <h3>Consultant / Advisor</h3>
+          <p>Transitioning into advisory, transformation strategy, and architecture guidance that connects technical decisions to measurable business outcomes.</p>
+          <div class="tags"><span>Advisory</span><span>Strategy</span></div>
+        </article>
       </div>
-      
-      <div class="carousel-nav">
-        <button class="carousel-btn" id="prevBtn" onclick="slideTimeline(-1)">←</button>
-        <button class="carousel-btn" id="nextBtn" onclick="slideTimeline(1)">→</button>
+    </div>
+
+    <div class="carousel-nav">
+      <button class="carousel-btn" id="prevBtn" aria-label="Previous timeline">←</button>
+      <button class="carousel-btn" id="nextBtn" aria-label="Next timeline">→</button>
+    </div>
+
+    <div class="career-summary">
+      <div class="summary-box">
+        <div class="label">Career span</div>
+        <strong>21+ years</strong>
+      </div>
+      <div class="summary-box">
+        <div class="label">Progression</div>
+        <strong>Engineer → Lead → Specialist → Consultant</strong>
+      </div>
+      <div class="summary-box">
+        <div class="label">Focus</div>
+        <strong>Cloud • DevOps • SRE • Strategy</strong>
       </div>
     </div>
   </div>
@@ -390,31 +424,30 @@ document.getElementById('search').addEventListener('input',e=>{
   filterPins(e.target.value);
 });
 
-let currentSlide = 0;
-const timeline = document.getElementById('timelineContainer');
-const timelineItems = timeline.querySelectorAll('.timeline-item');
-const totalItems = timelineItems.length;
-const itemsPerView = 3;
+const careerTrack = document.getElementById('careerTrack');
+const prevBtn = document.getElementById('prevBtn');
+const nextBtn = document.getElementById('nextBtn');
 
-function updateCarouselButtons() {
-  document.getElementById('prevBtn').disabled = currentSlide === 0;
-  document.getElementById('nextBtn').disabled = currentSlide >= totalItems - itemsPerView;
+function updateCarouselState(){
+  if (!careerTrack || !prevBtn || !nextBtn) return;
+  const maxScroll = careerTrack.scrollWidth - careerTrack.clientWidth;
+  prevBtn.disabled = careerTrack.scrollLeft <= 4;
+  nextBtn.disabled = careerTrack.scrollLeft >= maxScroll - 4;
 }
 
-function slideTimeline(direction) {
-  if (direction === 1 && currentSlide < totalItems - itemsPerView) {
-    currentSlide++;
-  } else if (direction === -1 && currentSlide > 0) {
-    currentSlide--;
-  }
-  
-  const scrollAmount = currentSlide * (100 / itemsPerView + 0.3);
-  timeline.style.transform = `translateX(-${scrollAmount * (timeline.offsetWidth / 100)}px)`;
-  updateCarouselButtons();
+function slideTimeline(direction){
+  if (!careerTrack) return;
+  const firstNode = careerTrack.querySelector('.career-node');
+  const step = firstNode ? firstNode.getBoundingClientRect().width + 18 : 260;
+  careerTrack.scrollBy({ left: direction * step, behavior: 'smooth' });
+  setTimeout(updateCarouselState, 200);
 }
 
-window.addEventListener('load', updateCarouselButtons);
-window.addEventListener('resize', updateCarouselButtons);
+prevBtn && prevBtn.addEventListener('click', () => slideTimeline(-1));
+nextBtn && nextBtn.addEventListener('click', () => slideTimeline(1));
+careerTrack && careerTrack.addEventListener('scroll', updateCarouselState);
+window.addEventListener('load', updateCarouselState);
+window.addEventListener('resize', updateCarouselState);
 </script>
 </body>
 </html>
